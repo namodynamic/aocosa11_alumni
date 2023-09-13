@@ -17,8 +17,11 @@ export default function RootLayout({ children }) {
           <div className="gradient" />
         </div>
         <NavBar />
-        <main>{children}</main>
+        {children}
 
+        <div className="flex flex-col items-center justify-between">
+          <Excos />
+        </div>
         <Footer />
         {/* </Provider> */}
       </body>

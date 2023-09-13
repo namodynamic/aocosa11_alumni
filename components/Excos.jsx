@@ -3,13 +3,16 @@ import { excos } from "@/constants";
 
 const Excos = () => {
   return (
-    <section id="excos" className="max-container max-sm:mt-12">
-      <div className="flex flex-col justify-start gap-5">
+    <section id="excos" className="max-container padding-x max-sm:mt-12">
+      <div className="flex flex-col justify-start relative gap-5">
         <h2 className="text-4xl font-bold ">
-          Meet <span className="text-maroon">Our</span> Excos
+          The <span className="maroon_gradient">Executive</span> Corner
         </h2>
         <p className="lg:max-w-lg mt-2 font-inter text-slate-950">
-          The following are our excos
+          The association is led by a dynamic and versatile team steering the
+          affairs of the association. The team will serve a two years term from
+          December 2023-December 2025 as ambassadors to carry out and deliver
+          the visions of the association.
         </p>
       </div>
 

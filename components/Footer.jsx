@@ -5,12 +5,12 @@ const Footer = () => {
   return (
     <footer>
       <hr className="border-yellow-400 border-t-4" />
-      <div className="flex flex-row mb-2 justify-center mt-2 ">
+      <div className="flex flex-row mb-2 relative justify-center mt-2 ">
         <a
           href="https://www.instagram.com/aocosa2011"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-transparent hover:transform cursor-pointer"
+          className="object-contain hover:bg-white cursor-pointer"
         >
           <Image src={instagram} alt="instagram" />
         </a>
