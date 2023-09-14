@@ -38,14 +38,17 @@ const NavBar = () => {
               height={60}
               className="object-contain rounded-full"
             />
-            <p className="font-Manrope font-bold text-lg text-black tracking-wide maroon_gradient">AOCOSA 05/11 Alumni</p>
+            <div>
+              <p className="font-Manrope font-extrabold text-lg tracking-wide maroon_gradient">AOCOSA 05/11 Alumni</p>
+              <p className="font-bold font-inter text-sm text-slate-500 tracking-tight">Network And Growth</p>
+          </div>
           </a>
-          <ul className="flex-1 flex justify-center items-center gap-10 max-lg:hidden">
+          <ul className="flex-1 flex justify-center items-center gap-5 max-lg:hidden">
             {navLinks.map((item) => (
               <li key={item.label}>
                 <a
                   href={item.href}
-                  className="font-normal leading-normal text-lg text-black hover:text-maroon"
+                  className="font-bold leading-normal text-lg text-black hover:text-maroon"
                 >
                   {item.label}
                 </a>
