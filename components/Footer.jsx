@@ -10,7 +10,7 @@ const Footer = () => {
           href="https://www.instagram.com/aocosa2011"
           target="_blank"
           rel="noopener noreferrer"
-          className="object-contain hover:bg-white cursor-pointer"
+          className="object-contain hover:bg-yellow-400 bg-white cursor-pointer"
         >
           <Image src={instagram} alt="instagram" />
         </a>
