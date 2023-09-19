@@ -1,4 +1,4 @@
-import { Hero, Excos } from "@/components";
+import { Hero} from "@/components";
 
 import Image from "next/image";
 

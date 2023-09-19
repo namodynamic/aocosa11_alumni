@@ -7,6 +7,7 @@ import { useState } from "react";
 import { instagram } from "@/public/assets";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { UserButton } from "@clerk/nextjs";
 
 const NavBar = () => {
   const [toggle, setToggle] = useState(false);
@@ -64,9 +65,10 @@ const NavBar = () => {
                 </li>
               );
             })}
-            <button type="button" className="black_btn" onClick={() => {}}>
+            <Link href="/registration" className="black_btn">
               Register
-            </button>
+            </Link>
+            <UserButton afterSignOutUrl="/"/>
           </ul>
           <div className="hidden max-lg:block">
             <Image
@@ -81,9 +83,11 @@ const NavBar = () => {
             <div
               className={`${
                 !toggle ? "hidden" : "flex"
-              } p-6 absolute bg-slate-800 top-20 right-5 my-2 min-w-[140px] rounded-2xl z-10`}
+              } p-6 absolute bg-slate-800 top-20 min-h-screen w-auto right-5 my-2 min-w-[140px] rounded-2xl z-10`}
             >
-              <ul className="">
+             
+              <UserButton afterSignOutUrl="/"/>
+              <ul>
                 {navLinks.map((item) => (
                   <li key={item.label} onClick={() => setToggle(!toggle)}>
                     <Link
@@ -94,13 +98,12 @@ const NavBar = () => {
                     </Link>
                   </li>
                 ))}
-                <button
-                  type="button"
+                <Link
+                 href="registration"
                   className="font-Manrope px-4 leading-normal text-lg text-white hover:text-maroon"
-                  onClick={() => {}}
                 >
                   Register
-                </button>
+                </Link>
               </ul>
             </div>
           </div>

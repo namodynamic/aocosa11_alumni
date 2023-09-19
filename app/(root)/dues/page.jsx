@@ -1,5 +1,3 @@
-import React from "react";
-
 const page = () => {
   return (
     <main className="padding-x xl:flex-row flex flex-col py-40 max-sm:mt-12 relative gap-10">
