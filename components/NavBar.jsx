@@ -1,13 +1,13 @@
 "use client";
 
-import { logo, hamburger, close } from "@/public/assets";
-import { navLinks } from "@/constants";
+import { logo, hamburger, close } from "../public/assets";
 import Image from "next/image";
 import { useState } from "react";
-import { instagram } from "@/public/assets";
+import { instagram } from "../public/assets";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { UserButton } from "@clerk/nextjs";
+import { navLinks } from "../constants";
 
 const NavBar = () => {
   const [toggle, setToggle] = useState(false);
@@ -68,7 +68,7 @@ const NavBar = () => {
             <Link href="/registration" className="black_btn">
               Register
             </Link>
-            <UserButton afterSignOutUrl="/"/>
+            <UserButton afterSignOutUrl="/" />
           </ul>
           <div className="hidden max-lg:block">
             <Image
@@ -85,8 +85,7 @@ const NavBar = () => {
                 !toggle ? "hidden" : "flex"
               } p-6 absolute bg-slate-800 top-20 min-h-screen w-auto right-5 my-2 min-w-[140px] rounded-2xl z-10`}
             >
-             
-              <UserButton afterSignOutUrl="/"/>
+              <UserButton afterSignOutUrl="/" />
               <ul>
                 {navLinks.map((item) => (
                   <li key={item.label} onClick={() => setToggle(!toggle)}>
@@ -99,7 +98,7 @@ const NavBar = () => {
                   </li>
                 ))}
                 <Link
-                 href="registration"
+                  href="registration"
                   className="font-Manrope px-4 leading-normal text-lg text-white hover:text-maroon"
                 >
                   Register

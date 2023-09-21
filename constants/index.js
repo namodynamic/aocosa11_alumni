@@ -1,4 +1,4 @@
-import { bankole, lawal, logo, lolade, ogunleye, okunade, poroye, pres, vp } from "@/public/assets";
+import {bankole, lawal, logo, lolade, ogunleye,okunade,poroye,pres,vp} from "../public/assets"
 
 export const navLinks = [
     { href: "/", label: "Home" },

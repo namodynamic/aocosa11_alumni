@@ -95,7 +95,7 @@
 }
 
 .black_btn {
-  @apply rounded-full border border-yellow-400 bg-black px-4 text-white transition-all hover:bg-white hover:text-black text-center text-lg font-inter flex items-center justify-center;
+  @apply rounded-full border border-yellow-400 bg-black px-4 text-white transition-all hover:bg-white hover:text-black text-center text-lg flex items-center justify-center;
 }
 
 .outline_btn {
@@ -139,11 +139,19 @@
 
 /* Form Component */
 .form_textarea {
-  @apply w-full flex rounded-lg h-[200px] mt-2 p-3 text-sm text-gray-500 outline-0;
+  @apply w-full flex rounded-lg h-[200px] mt-2 p-3 text-sm text-gray-500 outline-0 bg-white !important;
+}
+
+.no-focus {
+  @apply focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
 }
 
 .form_input {
-  @apply w-full flex rounded-lg mt-2 p-3 text-sm text-gray-500 outline-0;
+  @apply w-full flex rounded-lg mt-2 bg-white p-3 text-sm text-gray-500 outline-0 !important;
+}
+
+.account-form_image-input {
+  @apply cursor-pointer border-none bg-white outline-none file:text-blue-500 !important;
 }
 
 

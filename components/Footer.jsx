@@ -1,4 +1,4 @@
-import { instagram } from "@/public/assets";
+import { instagram } from "../public/assets";
 import Image from "next/image";
 
 const Footer = () => {

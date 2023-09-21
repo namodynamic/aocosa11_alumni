@@ -10,6 +10,7 @@ import lawal from "./excos/lawal.jpg";
 import hamburger from "./icons/hamburger.svg";
 import close from "./icons/close.png";
 import instagram from "./icons/instagram.svg";
+import profile from "./profile.svg"
 
 export {
   logo,
@@ -24,4 +25,5 @@ export {
   hamburger,
   close,
   instagram,
+  profile,
 };

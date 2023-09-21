@@ -2,21 +2,13 @@ import mongoose from "mongoose";
 
 const alumnusSchema = new mongoose.Schema({
   id: { type: "String", required: true },
+  username: { type: "String", required: true ,unique: true},
   name: { type: "String", required: true },
-  email: {
-    type: String,
-    required: true,
-  },
-  image: { type: String, required: true },
+  image: String,
   bio: String,
-  occupation: {
-    type: String,
-    required: true,
-  },
-  location: {
-    type: String,
-    required: true,
-  },
+  occupation: String,
+  birthday: { type: Date },
+  location: String,
   posts: [
     {
       type: mongoose.Schema.Types.ObjectId,
@@ -29,6 +21,6 @@ const alumnusSchema = new mongoose.Schema({
   },
 });
 
-const Alumnus = mongoose.models.Alumnus || mongoose.model("Alumnus", alumnusSchema);
+const User = mongoose.models.User || mongoose.model("User", alumnusSchema, "users");
 
-export default Alumnus;
+export default User;

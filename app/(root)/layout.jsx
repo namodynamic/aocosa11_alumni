@@ -1,6 +1,7 @@
-import { Footer, NavBar } from "@/components";
 import "../globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import NavBar from "../../components/NavBar";
+import Footer from "../../components/Footer";
 
 export const metadata = {
   title: "Aocosa 05/11 set",
