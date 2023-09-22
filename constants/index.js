@@ -8,7 +8,7 @@ export const navLinks = [
     { href: "#constitution", label: "Constitution" },
     { href: "#contact", label: "Contact" },
     { href: "/executives", label: "Executives" },
-    { href: "#login", label: "Login" },
+    { href: "/profile", label: "Profile" },
 ]
 
 export const excos = [

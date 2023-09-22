@@ -6,12 +6,13 @@ import { useState } from "react";
 import { instagram } from "../public/assets";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { UserButton } from "@clerk/nextjs";
+import { UserButton,useAuth } from "@clerk/nextjs";
 import { navLinks } from "../constants";
 
 const NavBar = () => {
   const [toggle, setToggle] = useState(false);
   const pathname = usePathname();
+  const { userId } = useAuth();
 
   return (
     <>
@@ -51,7 +52,8 @@ const NavBar = () => {
           </Link>
           <ul className="flex-1 flex justify-center items-center gap-5 max-lg:hidden">
             {navLinks.map((item) => {
-              const isActive = pathname === item.href;
+              const isActive = (pathname.includes(item.href) && item.href.length > 1) || pathname === item.href;
+              if(item.href === '/profile') item.href = `${item.href}/${userId}`
               return (
                 <li key={item.label}>
                   <Link
@@ -65,8 +67,11 @@ const NavBar = () => {
                 </li>
               );
             })}
-            <Link href="/registration" className="black_btn">
+            {/* <Link href="/registration" className="black_btn">
               Register
+            </Link> */}
+            <Link href="/login" className="black_btn">
+              Login
             </Link>
             <UserButton afterSignOutUrl="/" />
           </ul>
@@ -98,10 +103,10 @@ const NavBar = () => {
                   </li>
                 ))}
                 <Link
-                  href="registration"
+                  href="login"
                   className="font-Manrope px-4 leading-normal text-lg text-white hover:text-maroon"
                 >
-                  Register
+                  Login
                 </Link>
               </ul>
             </div>

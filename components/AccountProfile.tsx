@@ -259,7 +259,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
             </FormItem>
           )}
         />
-        <Button type="submit" className="">
+        <Button type="submit" className="onboarding_btn">
           Submit
         </Button>
       </form>
