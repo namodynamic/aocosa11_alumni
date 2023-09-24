@@ -31,8 +31,8 @@ const ProfileHeader = ({
   });
   return (
     <div className="flex w-full flex-col justify-start glassmorphism">
-      <div className="flex items-center gap-4 justify-between">
-        <div className="relative h-40 w-40 object-cover">
+      <div className="flex items-center gap-8">
+        <div className="relative h-40 w-40">
           <Image
             src={imgUrl}
             alt="Profile image"

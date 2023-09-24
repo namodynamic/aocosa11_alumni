@@ -73,6 +73,56 @@
   opacity: 0.15;
 }
 
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+.dropdown > a {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 72px;
+}
+.dropdown > a > img {
+  width: 20px;
+}
+.dropdown:hover .menu {
+  opacity: 1;
+  visibility: visible;
+}
+.menu > a:hover {
+  font-size: 14px;
+  padding: 12px 20px;
+}
+.menu > a:hover{
+  background: #f5f5f5;
+}
+.menu {
+  position: absolute;
+  top: 60px;
+  right: -20px;
+  display: grid;
+  padding: 8px 0;
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #e1e1e1;
+  box-shadow: 0 40px 40px rgb(0 0 0 / 6%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.25s;
+}
+.menu::before {
+  content: "";
+  background: inherit;
+  border-top: 1px solid #e1e1e1;
+  border-right: 1px solid #e1e1e1;
+  position: absolute;
+  top: -7px;
+  right: 22px;
+  height: 12px;
+  rotate: -45deg;
+}
+
 @media screen and (max-width: 640px) {
   .main {
     padding: 0;
@@ -80,6 +130,8 @@
 }
 
 /* Tailwind Styles */
+
+
 
 .padding-x {
   @apply sm:px-8 px-4;
@@ -119,6 +171,9 @@
 
 .green_gradient {
   @apply bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent;
+}
+.searchbar_input {
+  @apply no-focus border-none bg-white text-lg text-slate-400 outline-none !important;
 }
 
 

@@ -1,16 +1,24 @@
 "use client";
 
-import { logo, hamburger, close } from "../public/assets";
+import { logo, hamburger, close, logoo } from "../public/assets";
 import Image from "next/image";
 import { useState } from "react";
-import { instagram } from "../public/assets";
+import { instagram, chevron } from "../public/assets";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { UserButton,useAuth } from "@clerk/nextjs";
-import { navLinks } from "../constants";
+import { UserButton, useAuth } from "@clerk/nextjs";
+import { navLinks } from "@/constants";
 
 const NavBar = () => {
   const [toggle, setToggle] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
+  const toggleDropdown = (label) => {
+    if (activeDropdown === label) {
+      setActiveDropdown(null);
+    } else {
+      setActiveDropdown(label);
+    }
+  };
   const pathname = usePathname();
   const { userId } = useAuth();
 
@@ -18,17 +26,17 @@ const NavBar = () => {
     <>
       <header className="padding-x flex gap-2  relative w-full bg-green-700 justify-end">
         <div className="bg-white rounded-md px-1 py-1 hover:bg-yellow-400">
-          <a
+          <Link
             href="https://www.instagram.com/aocosa2011"
             target="_blank"
             rel="noopener noreferrer"
             className="object-contain cursor-pointer"
           >
             <Image src={instagram} alt="instagram" />
-          </a>
+          </Link>
         </div>
         <div className="text-white text-lg font-medium px-2 rounded-md hover:bg-white border border-yellow-400 hover:text-black bg-maroon justify-end">
-          <a href="/dues">Pay Dues Here</a>
+          <Link href="/dues">Pay Dues Here</Link>
         </div>
       </header>
       <header className="padding-x py-8 absolute z-10 w-full">
@@ -38,7 +46,7 @@ const NavBar = () => {
               src={logo}
               alt="Aocosa logo"
               width={60}
-              height={60}
+              height="auto"
               className="object-contain rounded-full"
             />
             <div>
@@ -50,31 +58,82 @@ const NavBar = () => {
               </p>
             </div>
           </Link>
+
           <ul className="flex-1 flex justify-center items-center gap-5 max-lg:hidden">
             {navLinks.map((item) => {
-              const isActive = (pathname.includes(item.href) && item.href.length > 1) || pathname === item.href;
-              if(item.href === '/profile') item.href = `${item.href}/${userId}`
+              let href = item.href;
+              const isActive =
+                (pathname.includes(href) && href.length > 1) ||
+                pathname === href;
+              const hasSubMenu = item.subMenu && item.subMenu.length > 0;
+              const showDropdown = activeDropdown === item.label;
+
               return (
                 <li key={item.label}>
-                  <Link
-                    className={`${
-                      isActive ? "text-maroon" : "text-black"
-                    } font-bold leading-normal text-lg hover:text-maroon`}
-                    href={item.href}
-                  >
-                    {item.label}
-                  </Link>
+                  {hasSubMenu ? (
+                    <div
+                      className={`${
+                        isActive ? "text-maroon" : "text-black"
+                      } font-bold leading-normal text-lg hover:text-maroon`}
+                      onMouseEnter={() => toggleDropdown(item.label)}
+                      onMouseLeave={() => toggleDropdown(item.label)}
+                    >
+                      <div className="flex relative">
+                        {item.label}
+                        <Image
+                          src={chevron}
+                          alt="chevron icon"
+                          className="inline-block ml-1"
+                        />
+                      </div>
+                      {showDropdown && (
+                        <div className="absolute p-4 rounded-md bg-white border border-gray-300 shadow-md">
+                          <ul>
+                            {item.subMenu.map((subMenuItem) => (
+                              <li key={subMenuItem.label}>
+                                <Link
+                                  href={
+                                    subMenuItem.label === "Profile"
+                                      ? `/profile/${userId}`
+                                      : subMenuItem.href
+                                  }
+                                  className={`${
+                                    pathname === subMenuItem.href ||
+                                    (subMenuItem.label === "Profile" &&
+                                      pathname === `/profile/${userId}`)
+                                      ? "text-maroon"
+                                      : "text-slate-400"
+                                  } hover:text-maroon`}
+                                >
+                                  {subMenuItem.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <Link
+                      href={href}
+                      className={`${
+                        isActive ? "text-maroon" : "text-black"
+                      } font-bold leading-normal text-lg hover:text-maroon`}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
                 </li>
               );
             })}
-            {/* <Link href="/registration" className="black_btn">
-              Register
-            </Link> */}
+          </ul>
+          <div className="flex gap-3 max-lg:hidden">
             <Link href="/login" className="black_btn">
               Login
             </Link>
             <UserButton afterSignOutUrl="/" />
-          </ul>
+          </div>
+
           <div className="hidden max-lg:block">
             <Image
               src={toggle ? close : hamburger}
