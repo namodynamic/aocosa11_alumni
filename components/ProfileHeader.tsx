@@ -30,44 +30,40 @@ const ProfileHeader = ({
     day: "numeric",
   });
   return (
-    <div className="flex w-full flex-col justify-start glassmorphism">
+    <div className="flex flex-col relative justify-start w-full bg-white p-6 rounded-lg shadow-lg ">
       <div className="flex items-center gap-8">
-        <div className="relative h-40 w-40">
+        <div className="relative h-40 w-40 rounded-none overflow-hidden">
           <Image
             src={imgUrl}
             alt="Profile image"
-            fill
-            className=" object-cover"
+            layout="fill"
+            objectFit="cover"
           />
         </div>
-        <div className="flex items-center gap-3">
-          <div className="flex-1">
-            <h2 className="text-left font-bold text-black">
-              <span className="text-slate-400"> Name:</span> {name}
-            </h2>
-            <p className="text-lg font-medium">
-              <span className="text-slate-400">Username:</span> @{username}
-            </p>
-            <p className="text-base-medium font-medium">
-              <span className="text-slate-400">Location: </span>
-              {location}
-            </p>
-            <p className="text-base-medium font-medium">
-              <span className="text-slate-400">Birthday:</span>{" "}
-              {formattedBirthday}
-            </p>
-            <p className="text-base-medium font-medium">
-              <span className="text-slate-400">Occupation:</span> {occupation}
-            </p>
-          </div>
+        <div className="flex items-items-start flex-col">
+          <h2 className="text-left text-2xl font-bold text-black">
+            <span className="text-slate-400"> Name:</span> {name}
+          </h2>
+          <p className="text-base font-medium">
+            <span className="text-slate-400">Username:</span> @{username}
+          </p>
+          <p className="text-base-medium font-medium">
+            <span className="text-slate-400">Location: </span>
+            {location}
+          </p>
+          <p className="text-base-medium font-medium">
+            <span className="text-slate-400">Birthday:</span>{" "}
+            {formattedBirthday}
+          </p>
+          <p className="text-base-medium font-medium">
+            <span className="text-slate-400">Occupation:</span> {occupation}
+          </p>
         </div>
       </div>
 
-      {/*ToDo: Community */}
+      <p className="mt-6 text-base text-slate-600">{bio}</p>
 
-      <p className="mt-6 max-w-lg text-base-regular text-light-2">{bio}</p>
-
-      <div className="mt-12 h-0.5 w-full bg-dark-3" />
+      <div className="mt-8 h-px bg-slate-100" />
     </div>
   );
 };

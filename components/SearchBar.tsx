@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { serch } from "@/public/assets";
 
 import { Input } from "./ui/input";
 
@@ -28,10 +29,10 @@ function Searchbar({ routeType }: Props) {
   }, [search, routeType]);
 
   return (
-    <div className="flex gap-1 px-4 py-2 ">
+    <div className="flex gap-1 px-4 bg-white py-2 ">
       <Image
-        src="/assets/search-gray.svg"
-        alt="search"
+        src={serch}
+        alt="search icon"
         width={24}
         height={24}
         className="object-contain"
@@ -42,7 +43,7 @@ function Searchbar({ routeType }: Props) {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder={`${
-          routeType !== "/alumni" ? "Search alumni" : "Search creators"
+          routeType !== "/alumni" ? "Search an alumnus" : "Search creators"
         }`}
         className="searchbar_input"
       />

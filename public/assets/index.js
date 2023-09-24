@@ -10,9 +10,9 @@ import lawal from "./excos/lawal.jpg";
 import hamburger from "./icons/hamburger.svg";
 import close from "./icons/close.png";
 import instagram from "./icons/instagram.svg";
-import profile from "./profile.svg"
+import profile from "./profile.svg";
 import chevron from "./icons/chevron.svg";
-import logoo from "./logoo.svg";
+import serch from "./icons/serch.svg";
 
 export {
   logo,
@@ -29,5 +29,5 @@ export {
   instagram,
   profile,
   chevron,
-  logoo,
+  serch,
 };

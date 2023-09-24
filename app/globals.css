@@ -186,13 +186,13 @@
   @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
 }
 
-.prompt_layout {
-  @apply space-y-6 py-8 sm:columns-2 sm:gap-6 xl:columns-3;
-}
 
-/* Feed Component */
-.feed {
-  @apply mt-16 mx-auto w-full max-w-xl flex justify-center items-center flex-col gap-2;
+
+.alumnus_card {
+  @apply p-4 bg-white border rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105;
+}
+.exco_card {
+  @apply flex flex-1 flex-col gap-10 relative rounded-xl w-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105;
 }
 
 /* Form Component */
@@ -212,6 +212,9 @@
   @apply cursor-pointer border-none bg-white outline-none file:text-blue-500 !important;
 }
 
+.view_btn {
+  @apply w-full mt-4 py-2 text-white bg-maroon border border-maroon rounded-md hover:bg-transparent hover:text-maroon hover:border-maroon transition duration-300 !important;
+}
 
 .dropdown {
   @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-white min-w-[210px] flex flex-col gap-2 justify-end items-end;

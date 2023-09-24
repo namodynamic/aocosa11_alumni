@@ -6,7 +6,7 @@ const page = () => {
     <section className="padding-x py-40 max-sm:mt-12">
       <div className="flex flex-col justify-start relative gap-5">
         <h2 className="text-4xl font-bold ">
-          The <span className="maroon_gradient">Executive</span> Corner
+          Meet <span className="maroon_gradient">Our</span> Executives 
         </h2>
         <p className="lg:max-w-lg mt-2 font-inter text-slate-950">
           The association is led by a dynamic and versatile team steering the
