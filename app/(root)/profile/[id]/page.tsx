@@ -1,7 +1,7 @@
 import ProfileHeader from "@/components/ProfileHeader";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { fetchAlumnus } from "@/lib/actions/alumnus.actions";
-// import { profileTabs } from "@/constants";
+
 
 import { currentUser } from "@clerk/nextjs";
 import Image from "next/image";
@@ -17,7 +17,8 @@ const Page = async ({ params }: { params: { id: string } }) => {
 
   if (!userInfo?.onboarded) redirect("/onboarding");
   return (
-    <section>
+    <section className="padding-x py-40 mx-auto">
+      <div className="">
       <ProfileHeader
         accountId={userInfo.id}
         authUserId={user.id}
@@ -29,6 +30,25 @@ const Page = async ({ params }: { params: { id: string } }) => {
         occupation={userInfo.occupation}
         birthday={userInfo.birthday}
       />
+      </div>
+
+       {/* Tabs Section */}
+       <div className="mt-8">
+          {/* <Tabs>
+            <TabsList>
+              <TabsTrigger>Tab 1</TabsTrigger>
+              <TabsTrigger>Tab 2</TabsTrigger>
+              <TabsTrigger>Tab 3</TabsTrigger>
+            </TabsList>
+            <TabsContent> */}
+              <div className="py-4">
+                <h2 className="text-2xl font-bold mb-4">Tab 1 Content</h2>
+                <p>This is the content for Tab 1.</p>
+              </div>
+              {/* Add content for Tab 2 and Tab 3 as needed */}
+            {/* </TabsContent>
+          </Tabs> */}
+        </div>
 
 
     </section>

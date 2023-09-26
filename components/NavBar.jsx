@@ -24,7 +24,7 @@ const NavBar = () => {
 
   return (
     <>
-      <header className="padding-x flex gap-2  relative w-full bg-green-700 justify-end">
+      <section className="padding-x flex gap-2  relative w-full bg-green-700 justify-end">
         <div className="bg-white rounded-md px-1 py-1 hover:bg-yellow-400">
           <Link
             href="https://www.instagram.com/aocosa2011"
@@ -38,8 +38,8 @@ const NavBar = () => {
         <div className="text-white text-lg font-medium px-2 rounded-md hover:bg-white border border-yellow-400 hover:text-black bg-maroon justify-end">
           <Link href="/dues">Pay Dues Here</Link>
         </div>
-      </header>
-      <header className="padding-x py-8 absolute z-10 w-full">
+      </section>
+      <section className="padding-x py-8 absolute z-10 w-full">
         <nav className="flex justify-between items-center">
           <Link href="/" className="flex gap-2 flex-center">
             <Image
@@ -171,7 +171,7 @@ const NavBar = () => {
             </div>
           </div>
         </nav>
-      </header>
+      </section>
     </>
   );
 };

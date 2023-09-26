@@ -16,10 +16,10 @@ export default function RootLayout({ children }) {
           <div className="main">
             <div className="gradient" />
           </div>
-          <NavBar />
-          <div className="w-full flex justify-center items-center min-h-screen">
-            {children}
-          </div>
+          <header>
+            <NavBar />
+          </header>
+          <div className="container mx-auto py-8">{children}</div>
           <Footer />
         </ClerkProvider>
       </body>
