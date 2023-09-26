@@ -1,4 +1,12 @@
+"use client";
+
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { edit } from "@/public/assets";
+import Link from "next/link";
+import { Button } from "./ui/button";
+
+
 
 interface Props {
   accountId: string;
@@ -25,45 +33,56 @@ const ProfileHeader = ({
   birthday,
   type,
 }: Props) => {
-  const formattedBirthday = birthday.toLocaleDateString(undefined, {
-    month: "short",
-    day: "numeric",
-  });
+
+  const router = useRouter()
+  const handleEditClick = () => {
+    router.push('/profile/edit');
+  };
+
+  const formattedBirthday = new Intl.DateTimeFormat('en-US', {
+    day: 'numeric',
+    month: 'short',
+  }).format(birthday);
+
   return (
     <div className="flex flex-col relative justify-start w-full bg-white p-6 rounded-lg shadow-lg ">
+      <Button onClick={handleEditClick} className="self-end flex items-center space-x-1 text-gray-500 hover:text-blue-500">
+        <Image src={edit} alt="edit icon" width={18} height={18} className="object-contain mr-2" />
+        Edit Profile
+      </Button>
       <div className="flex items-center gap-8">
-        <div className="relative h-40 w-40 rounded-none overflow-hidden">
+        <div className="relative h-60 w-60 overflow-hidden">
           <Image
             src={imgUrl}
-            alt="Profile image"
+            alt="Profile picture"
             layout="fill"
             objectFit="cover"
           />
         </div>
-        <div className="flex items-items-start flex-col">
-          <h2 className="text-left text-2xl font-bold text-black">
-            <span className="text-slate-400"> Name:</span> {name}
+        <div className="flex flex-col">
+          <h2 className="text-2xl font-bold text-black">
+            <span className="text-gray-500"> Name:</span> {name}
           </h2>
           <p className="text-base font-medium">
-            <span className="text-slate-400">Username:</span> @{username}
+            <span className="text-gray-500">Username:</span> @{username}
           </p>
           <p className="text-base-medium font-medium">
-            <span className="text-slate-400">Location: </span>
+            <span className="text-gray-500">Location: </span>
             {location}
           </p>
           <p className="text-base-medium font-medium">
-            <span className="text-slate-400">Birthday:</span>{" "}
+            <span className="text-gray-500">Birthday:</span>{" "}
             {formattedBirthday}
           </p>
           <p className="text-base-medium font-medium">
-            <span className="text-slate-400">Occupation:</span> {occupation}
+            <span className="text-gray-500">Occupation:</span> {occupation}
           </p>
         </div>
       </div>
 
       <p className="mt-6 text-base text-slate-600">{bio}</p>
 
-      <div className="mt-8 h-px bg-slate-100" />
+      
     </div>
   );
 };

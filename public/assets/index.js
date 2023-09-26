@@ -13,6 +13,7 @@ import instagram from "./icons/instagram.svg";
 import profile from "./profile.svg";
 import chevron from "./icons/chevron.svg";
 import serch from "./icons/serch.svg";
+import edit from "./icons/edit.svg";
 
 export {
   logo,
@@ -30,4 +31,5 @@ export {
   profile,
   chevron,
   serch,
+  edit,
 };

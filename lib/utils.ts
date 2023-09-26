@@ -20,6 +20,7 @@ export function formatDateString(dateString: string) {
     day: "numeric",
   };
 
+
   const date = new Date(dateString);
   const formattedDate = date.toLocaleDateString(undefined, options);
 

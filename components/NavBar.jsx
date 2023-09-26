@@ -1,12 +1,12 @@
 "use client";
 
-import { logo, hamburger, close, logoo } from "../public/assets";
+import { logo, hamburger, close} from "../public/assets";
 import Image from "next/image";
 import { useState } from "react";
 import { instagram, chevron } from "../public/assets";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { UserButton, useAuth } from "@clerk/nextjs";
+import { UserButton,SignedIn,SignInButton, useAuth, SignedOut } from "@clerk/nextjs";
 import { navLinks } from "@/constants";
 
 const NavBar = () => {
@@ -128,10 +128,19 @@ const NavBar = () => {
             })}
           </ul>
           <div className="flex gap-3 max-lg:hidden">
-            <Link href="/login" className="black_btn">
-              Login
+            <Link href="/registration" className="outline_btn">
+              Register
             </Link>
+            <SignedIn>
+
             <UserButton afterSignOutUrl="/" />
+            </SignedIn>
+            <SignedOut>
+              <div className="black_btn">
+
+              <SignInButton/>
+              </div>
+            </SignedOut>
           </div>
 
           <div className="hidden max-lg:block">

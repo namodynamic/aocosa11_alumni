@@ -6,6 +6,6 @@ export const UserValidation = z.object({
     username: z.string().min(3).max(30),
     occupation: z.string().min(3).max(50),
     location: z.string().min(3).max(50),
-    birthday: z.string(),
+    birthday: z.date(),
     bio: z.string().min(3).max(1000),
 })

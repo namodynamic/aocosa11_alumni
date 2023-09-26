@@ -53,6 +53,7 @@ export async function updateAlumnus({
       name,
       bio,
       image,
+      birthday,
       onboarded: true,
     };
 

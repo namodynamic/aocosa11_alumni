@@ -125,7 +125,11 @@
 }
 
 .black_btn {
-  @apply rounded-full border border-yellow-400 bg-black px-4 text-white transition-all hover:bg-white hover:text-black text-center text-lg flex items-center justify-center;
+  @apply rounded-xl border border-yellow-400 bg-black px-4 text-white transition-all hover:bg-white hover:text-black text-center text-lg flex items-center justify-center;
+}
+
+.outline_btn {
+  @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center;
 }
 .onboarding_btn {
   @apply rounded-full border border-yellow-400 bg-black px-4 text-white transition-all hover:bg-white hover:text-black text-center text-lg flex items-center justify-center !important;
