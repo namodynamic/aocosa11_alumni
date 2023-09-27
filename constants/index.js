@@ -5,7 +5,7 @@ import {
   ogunleye,
   okunade,
   poroye,
-  pres,
+  bamgbopa,
   vp,
 } from "../public/assets";
 
@@ -46,7 +46,7 @@ export const excos = [
   {
     name: "Damilare BAMGBOPA",
     office: "President",
-    image: pres,
+    image: bamgbopa,
   },
   {
     name: "Olabisi ONALAJA",

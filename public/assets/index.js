@@ -1,5 +1,5 @@
 import logo from "./logo.jpeg";
-import pres from "./excos/pres.jpg";
+import bamgbopa from "./excos/bamgbopa.jpg";
 import vp from "./excos/vp.jpg";
 import bankole from "./excos/bankole.jpg";
 import okunade from "./excos/okunade.jpg";
@@ -17,7 +17,7 @@ import edit from "./icons/edit.svg";
 
 export {
   logo,
-  pres,
+  bamgbopa,
   vp,
   bankole,
   okunade,
