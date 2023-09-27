@@ -95,6 +95,15 @@
   content: "";
  
 }
+.profile_header_bg {
+  background-image:
+   url('https://media.istockphoto.com/id/1499824503/photo/juneteenth-black-history-month-cinco-de-mayo-holiday-background-grunge-pattern-red-green.jpg?s=612x612&w=0&k=20&c=gREiyrZNx9hmQHkGeyLgSSmBd7TzL1kju9rmWB-YgZU=');
+  z-index: 2;
+  opacity: 1;
+  top: 0;
+  content: "";
+ 
+}
 
 
 .text-shadow {

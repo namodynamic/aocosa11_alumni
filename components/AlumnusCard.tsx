@@ -9,10 +9,11 @@ interface Props {
   name: string;
   username: string;
   imgUrl: string;
+  occupation: string;
   personType: string;
 }
 
-const AlumnusCard = ({ id, name, username, imgUrl }: Props) => {
+const AlumnusCard = ({ id, name, username, imgUrl,occupation }: Props) => {
   const router = useRouter();
 
   return (
@@ -33,7 +34,8 @@ const AlumnusCard = ({ id, name, username, imgUrl }: Props) => {
 
       <div className="text-center">
         <h4 className="text-xl font-semibold text-slate-500">{name}</h4>
-        <p className="text-sm text-slate-400">@{username}</p>
+        <p className="text-md text-gray-600">{occupation}</p>
+        <p className="text-sm text-slate-300">@{username}</p>
       </div>
 
       <Button

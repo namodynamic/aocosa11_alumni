@@ -45,13 +45,13 @@ const ProfileHeader = ({
   }).format(birthday);
 
   return (
-    <div className="flex flex-col relative justify-start w-full bg-white p-6 rounded-lg shadow-lg ">
-      <Button onClick={handleEditClick} className="self-end flex items-center space-x-1 text-gray-500 hover:text-blue-500">
-        <Image src={edit} alt="edit icon" width={18} height={18} className="object-contain mr-2" />
+    <div className="flex flex-col text-white bg-cover relative justify-start w-full bg-black/80 p-6 rounded-lg shadow-lg ">
+      <Button onClick={handleEditClick} className="self-end flex items-center space-x-1 text-gray-500 ">
+        <Image src={edit} alt="edit icon" width={18} height={18} className="object-contain mr-2 transform hover:scale-105 cursor-pointer" />
         Edit Profile
       </Button>
       <div className="flex items-center gap-8">
-        <div className="relative h-60 w-60 overflow-hidden">
+        <div className="relative h-60 w-60 overflow-hidden rounded-xl">
           <Image
             src={imgUrl}
             alt="Profile picture"
@@ -60,7 +60,7 @@ const ProfileHeader = ({
           />
         </div>
         <div className="flex flex-col">
-          <h2 className="text-2xl font-bold text-black">
+          <h2 className="text-2xl font-bold text-white">
             <span className="text-gray-500"> Name:</span> {name}
           </h2>
           <p className="text-base font-medium">
@@ -80,7 +80,7 @@ const ProfileHeader = ({
         </div>
       </div>
 
-      <p className="mt-6 text-base text-slate-600">{bio}</p>
+      <p className="mt-6 text-base text-white">{bio}</p>
 
       
     </div>

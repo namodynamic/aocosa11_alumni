@@ -23,7 +23,6 @@ import { usePathname, useRouter } from "next/navigation";
 import { updateAlumnus } from "@/lib/actions/alumnus.actions";
 import { useUploadThing } from "@/lib/uploadthing";
 
-
 interface Props {
   user: {
     id: string;
@@ -54,7 +53,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
       username: user?.username || "",
       occupation: user?.occupation || "",
       location: user?.location || "",
-      birthday: user?.birthday || "",
+      birthday: user?.birthday || null,
       bio: user?.bio || "",
     },
   });
@@ -65,7 +64,6 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
   ) => {
     e.preventDefault();
 
-    
     const fileReader = new FileReader();
 
     if (e.target.files && e.target.files.length > 0) {
@@ -86,11 +84,12 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
   };
 
   const onSubmit = async (values: z.infer<typeof UserValidation>) => {
-    console.log('onSubmit called');
+    console.log("onSubmit called");
 
     const blob = values.profile_photo;
 
-    const birthdayDate = new Date(values.birthday);
+    const birthdayDate = values.birthday ? new Date(values.birthday) : null;
+
 
     const hasImageChanged = isBase64Image(blob);
 
@@ -234,7 +233,16 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
                 Birthday
               </FormLabel>
               <FormControl>
-                <Input type="date" className="form_input no-focus" {...field} value={field.value instanceof Date ? field.value.toISOString().split('T')[0] : field.value} />
+                <Input
+                  type="date"
+                  className="form_input no-focus"
+                  {...field}
+                  value={
+                    field.value instanceof Date
+                      ? field.value.toISOString().split("T")[0]
+                      : field.value
+                  }
+                />
               </FormControl>
               <FormMessage />
             </FormItem>

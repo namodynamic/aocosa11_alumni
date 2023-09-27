@@ -142,7 +142,8 @@ const NavBar = () => {
               </div>
             </SignedOut>
           </div>
-
+          
+       {/* Dropdown menu  */}
           <div className="hidden max-lg:block">
             <Image
               src={toggle ? close : hamburger}

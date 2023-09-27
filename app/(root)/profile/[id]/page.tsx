@@ -58,7 +58,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
   } catch (error) {
     console.error(error);
     // Provide an error message or redirect as needed
-    return <div className="padding-x py-40 mx-auto text-center">Error: An error occurred while fetching user data.</div>;
+    return <div className="padding-x min-h-screen py-40 mx-auto text-center">Error: An error occurred while fetching user data.</div>;
 
   }
 
