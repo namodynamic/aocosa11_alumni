@@ -39,10 +39,13 @@ const ProfileHeader = ({
     router.push('/profile/edit');
   };
 
-  const formattedBirthday = new Intl.DateTimeFormat('en-US', {
-    day: 'numeric',
-    month: 'short',
-  }).format(birthday);
+  const formattedBirthday = birthday
+  ? new Intl.DateTimeFormat('en-US', {
+      day: 'numeric',
+      month: 'short',
+    }).format(new Date(birthday))
+  : 'No birthday available';
+
 
   return (
     <div className="flex flex-col text-white bg-cover relative justify-start w-full bg-black/80 p-6 rounded-lg shadow-lg ">

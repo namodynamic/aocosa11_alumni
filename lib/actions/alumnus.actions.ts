@@ -57,9 +57,9 @@ export async function updateAlumnus({
       onboarded: true,
     };
 
-    // Optional: Add the birthday and location fields to the update object if provided
+    // Add the birthday and location fields to the update object if provided
     if (birthday) {
-      updateObject.birthday = birthday;
+      updateObject.birthday = typeof birthday === 'string' ? new Date(birthday) : birthday;
     }
 
     if (location) {

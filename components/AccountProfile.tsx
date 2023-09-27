@@ -90,13 +90,12 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
 
     const birthdayDate = values.birthday ? new Date(values.birthday) : null;
 
-
     const hasImageChanged = isBase64Image(blob);
 
     if (hasImageChanged) {
       const imgRes = await startUpload(files);
 
-      if (imgRes && imgRes[0].fileUrl) {
+      if (imgRes && imgRes.length > 0 && imgRes[0].fileUrl) {
         values.profile_photo = imgRes[0].fileUrl;
       }
     }

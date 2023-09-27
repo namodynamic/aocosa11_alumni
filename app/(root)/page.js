@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Link from "next/link"; 
 import Hero from "../../components/Hero";
 
 export default function Home() {
@@ -95,6 +95,26 @@ export default function Home() {
               the lives of underprivileged children in our area. Together, we
               can make a difference.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="container section_bg bg-auto mt-10 mx-auto">
+        <div className="flex w-full items-center flex-col mt-8">
+          <h1 className="text-4xl mt-16 mb-6 font-extrabold text-maroon leading-[1.15]">
+            OUR FUTURE STARTS HERE.
+          
+          </h1>
+          <p className="sub_head_text">
+            In our vision to build a strong group, no member is left behind and
+            we hope to carry everyone along and make a stronger unit in the long
+            run. One person at a time, we are sure to make the impact we desire
+            to see.
+          </p>
+
+          <div className="bg-yellow-500 py-2 px-5 transform hover:scale-105 text-bold text-white mb-6">
+
+          <Link href="/registration">GROW WITH US</Link>
           </div>
         </div>
       </section>
