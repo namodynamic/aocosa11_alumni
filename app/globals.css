@@ -73,44 +73,42 @@
   opacity: 0.15;
 }
 
-
 .hero-bg {
   background-image: linear-gradient(
-    115deg, rgba(239, 87, 87, 0.7),
-    rgba(37, 126, 17, 0.7)
-  ),
-   url('/assets/aoc4.jpeg');
+      115deg,
+      rgba(239, 87, 87, 0.7),
+      rgba(37, 126, 17, 0.7)
+    ),
+    url("/assets/aoc4.jpeg");
   z-index: 2;
   opacity: 1;
   top: 0;
   content: "";
-
 }
 .news_bg {
   background-image: linear-gradient(
-    115deg, rgba(223, 47, 47, 0.5),
-    rgba(101, 9, 9, 0.7)
-  ),
-   url('https://media.istockphoto.com/id/1488531830/vector/purple-abstract-geometric-background-banner-advertising-design.jpg?s=612x612&w=0&k=20&c=sxvFOgPcViI99OfZJoYsOhidxuu1kWllphgxJ6790l4=');
+      115deg,
+      rgba(223, 47, 47, 0.5),
+      rgba(101, 9, 9, 0.7)
+    ),
+    url("https://media.istockphoto.com/id/1488531830/vector/purple-abstract-geometric-background-banner-advertising-design.jpg?s=612x612&w=0&k=20&c=sxvFOgPcViI99OfZJoYsOhidxuu1kWllphgxJ6790l4=");
   z-index: 2;
   opacity: 1;
   top: 0;
   content: "";
- 
 }
 .section_bg {
   background-image: linear-gradient(
-    115deg, rgba(45, 213, 121, 0.7),
-    rgba(7, 134, 33, 0.7)
-  ),
-   url('https://images.unsplash.com/flagged/photo-1554473675-d0904f3cbf38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNvbGxlZ2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60');
+      115deg,
+      rgba(45, 213, 121, 0.7),
+      rgba(7, 134, 33, 0.7)
+    ),
+    url("https://images.unsplash.com/flagged/photo-1554473675-d0904f3cbf38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNvbGxlZ2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60");
   z-index: 2;
   opacity: 1;
   top: 0;
   content: "";
- 
 }
-
 
 .text-shadow {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.866);
@@ -124,8 +122,6 @@
 
 /* Tailwind Styles */
 
-
-
 .padding-x {
   @apply sm:px-8 px-4;
 }
@@ -133,7 +129,6 @@
 .padding-y {
   @apply sm:py-24 py-12;
 }
-
 
 .app {
   @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
@@ -161,7 +156,6 @@
   @apply lg:max-w-lg mb-8 font-inter text-white whitespace-pre-line text-shadow font-extrabold text-center;
 }
 
-
 .orange_gradient {
   @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
 }
@@ -177,8 +171,6 @@
   @apply no-focus border-none bg-white text-lg text-slate-400 outline-none !important;
 }
 
-
-
 .desc {
   @apply mt-10 text-lg text-black sm:text-xl max-w-2xl;
 }
@@ -187,10 +179,8 @@
   @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
 }
 
-
-
 .alumnus_card {
-  @apply p-4 bg-white border rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105;
+  @apply p-2 bg-white border rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105;
 }
 .exco_card {
   @apply flex flex-1 flex-col gap-10 relative rounded-xl w-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105;

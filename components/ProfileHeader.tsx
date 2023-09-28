@@ -3,10 +3,7 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { edit } from "@/public/assets";
-import Link from "next/link";
 import { Button } from "./ui/button";
-
-
 
 interface Props {
   accountId: string;
@@ -33,34 +30,36 @@ const ProfileHeader = ({
   birthday,
   type,
 }: Props) => {
-
-  const router = useRouter()
+  const router = useRouter();
   const handleEditClick = () => {
-    router.push('/profile/edit');
+    router.push("/profile/edit");
   };
 
   const formattedBirthday = birthday
-  ? new Intl.DateTimeFormat('en-US', {
-      day: 'numeric',
-      month: 'short',
-    }).format(new Date(birthday))
-  : 'No birthday available';
-
+    ? new Intl.DateTimeFormat("en-US", {
+        day: "numeric",
+        month: "short",
+      }).format(new Date(birthday))
+    : "No birthday available";
 
   return (
     <div className="flex flex-col text-white bg-cover relative justify-start w-full bg-black/80 p-6 rounded-lg shadow-lg ">
-      <Button onClick={handleEditClick} className="self-end flex items-center space-x-1 text-gray-500 ">
-        <Image src={edit} alt="edit icon" width={18} height={18} className="object-contain mr-2 transform hover:scale-105 cursor-pointer" />
+      <Button
+        onClick={handleEditClick}
+        className="self-end flex items-center space-x-1 text-gray-500 "
+      >
+        <Image
+          src={edit}
+          alt="edit icon"
+          width={18}
+          height={18}
+          className="object-contain mr-2 transform hover:scale-105 cursor-pointer"
+        />
         Edit Profile
       </Button>
       <div className="flex items-center gap-8">
-        <div className="relative h-60 w-60 overflow-hidden rounded-xl">
-          <Image
-            src={imgUrl}
-            alt="Profile picture"
-            layout="fill"
-            objectFit="cover"
-          />
+        <div className="relative overflow-hidden rounded-xl">
+          <Image src={imgUrl} alt="Profile picture" height={160} width={200} />
         </div>
         <div className="flex flex-col">
           <h2 className="text-2xl font-bold text-white">
@@ -74,8 +73,7 @@ const ProfileHeader = ({
             {location}
           </p>
           <p className="text-base-medium font-medium">
-            <span className="text-gray-500">Birthday:</span>{" "}
-            {formattedBirthday}
+            <span className="text-gray-500">Birthday:</span> {formattedBirthday}
           </p>
           <p className="text-base-medium font-medium">
             <span className="text-gray-500">Occupation:</span> {occupation}
@@ -84,8 +82,6 @@ const ProfileHeader = ({
       </div>
 
       <p className="mt-6 text-base text-white">{bio}</p>
-
-      
     </div>
   );
 };

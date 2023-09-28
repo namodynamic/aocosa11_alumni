@@ -14,6 +14,7 @@ import profile from "./profile.svg";
 import chevron from "./icons/chevron.svg";
 import serch from "./icons/serch.svg";
 import edit from "./icons/edit.svg";
+import geo from "./icons/geo.svg";
 
 export {
   logo,
@@ -32,4 +33,5 @@ export {
   chevron,
   serch,
   edit,
+  geo,
 };

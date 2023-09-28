@@ -24,7 +24,7 @@ const page = async ({
     pageSize: 25,
   });
 
-  const alumniData = result.users; 
+  const alumniData = result.users;
 
   return (
     <section className="padding-x py-40 max-sm:mt-12">
@@ -40,12 +40,13 @@ const page = async ({
       </div>
 
       <div className="mt-16 relative ">
-       
         <Searchbar routeType="alumni" />
 
         <div className="mt-16 relative grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 sm:gap-4 gap-10">
           {alumniData.length === 0 ? (
-            <p className="text-center text-base text-slate-500">Alumnus not found!</p>
+            <p className="text-center text-base text-slate-500">
+              Alumnus not found!
+            </p>
           ) : (
             <>
               {alumniData.map((person) => (
@@ -55,6 +56,7 @@ const page = async ({
                   name={person.name}
                   username={person.username}
                   occupation={person.occupation}
+                  location={person.location}
                   imgUrl={person.image}
                   personType="User"
                 />
@@ -65,7 +67,7 @@ const page = async ({
 
         <Pagination
           path="alumni"
-          pageNumber={searchParams?.page ? +searchParams.page : 2}
+          pageNumber={searchParams?.page ? +searchParams.page : 1}
           isNext={result.isNext}
         />
       </div>

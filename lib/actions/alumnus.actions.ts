@@ -85,7 +85,7 @@ export async function fetchAlumni({
   userId,
   searchString = "",
   pageNumber = 1,
-  pageSize = 20,
+  pageSize = 24,
   sortBy = "desc",
 }: {
   userId: string;

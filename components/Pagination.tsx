@@ -29,22 +29,22 @@ function Pagination({ pageNumber, isNext, path }: Props) {
     }
   };
 
-  if (!isNext && pageNumber === 1) return null;
+  if (!isNext && pageNumber === 0) return null;
 
   return (
-    <div className='mt-10 flex w-full items-center justify-between gap-5 relative'>
+    <div className="mt-10 flex w-full items-center justify-between gap-5 relative">
       <Button
         onClick={() => handleNavigation("prev")}
         disabled={pageNumber === 1}
-        className='!text-small-regular text-light-2'
+        className="text-sm text-slate-400"
       >
         Prev
       </Button>
-      <p className='text-sm text-black'>{pageNumber}</p>
+      <p className="text-sm text-black">{pageNumber}</p>
       <Button
         onClick={() => handleNavigation("next")}
         disabled={!isNext}
-        className='text-sm text-slate-400'
+        className="text-sm text-slate-400"
       >
         Next
       </Button>
