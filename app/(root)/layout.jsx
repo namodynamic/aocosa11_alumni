@@ -4,8 +4,8 @@ import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
 
 export const metadata = {
-  title: "Aocosa 05/11 set",
-  description: "Aocosa 05/11 set alumni",
+  title: "AOCOSA 05/11 ALUMNI",
+  description: "Adeola Odutola College Old Student Association 2005/2011 set.",
 };
 
 export default function RootLayout({ children }) {

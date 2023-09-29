@@ -180,7 +180,7 @@
 }
 
 .alumnus_card {
-  @apply p-2 bg-white border rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105;
+  @apply p-4 bg-white border rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 items-center text-center;
 }
 .exco_card {
   @apply flex flex-1 flex-col gap-10 relative rounded-xl w-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105;
@@ -204,7 +204,7 @@
 }
 
 .view_btn {
-  @apply w-full mt-4 py-2 text-white bg-maroon border border-maroon rounded-md hover:bg-transparent hover:text-maroon hover:border-maroon transition duration-300 !important;
+  @apply w-full py-2 sm:p-1 text-white bg-maroon border border-maroon rounded-md hover:bg-transparent hover:text-maroon hover:border-maroon transition duration-300 !important;
 }
 
 .dropdown {

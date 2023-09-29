@@ -85,7 +85,7 @@ export async function fetchAlumni({
   userId,
   searchString = "",
   pageNumber = 1,
-  pageSize = 24,
+  pageSize = 23,
   sortBy = "desc",
 }: {
   userId: string;
@@ -132,7 +132,7 @@ export async function fetchAlumni({
     // Check if there are more users beyond the current page.
     const isNext = totalUsersCount > skipAmount + users.length;
 
-    return { users, isNext };
+    return { users, isNext, totalUsersCount };
   } catch (error) {
     console.error("Error fetching users:", error);
     throw error;

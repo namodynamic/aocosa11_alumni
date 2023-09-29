@@ -59,7 +59,13 @@ const ProfileHeader = ({
       </Button>
       <div className="flex items-center gap-8">
         <div className="relative overflow-hidden rounded-xl">
-          <Image src={imgUrl} alt="Profile picture" height={160} width={200} />
+          <Image
+            src={imgUrl}
+            alt="Profile picture"
+            height={400}
+            width={200}
+            className="object-fill"
+          />
         </div>
         <div className="flex flex-col">
           <h2 className="text-2xl font-bold text-white">

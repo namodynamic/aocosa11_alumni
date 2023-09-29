@@ -26,24 +26,23 @@ const AlumnusCard = ({
   const router = useRouter();
 
   return (
-    <section className="alumnus_card">
-      <div className="relative h-36 w-36 mx-auto mb-4">
-        <Image
-          src={imgUrl}
-          onError={(e) => {
-            const imgElement = e.currentTarget as HTMLImageElement;
-            imgElement.style.display = "none";
-          }}
-          layout="fill"
-          alt="Profile image"
-          className="rounded-full object-fill"
-        />
-      </div>
+    <div className="alumnus_card">
+      <Image
+        src={imgUrl}
+        onError={(e) => {
+          const imgElement = e.currentTarget as HTMLImageElement;
+          imgElement.style.display = "none";
+        }}
+        height={160}
+        width={160}
+        alt="Profile image"
+        className="rounded-full h-36 w-36 object-fill mx-auto"
+      />
 
-      <div className="text-center">
-        <h4 className="text-xl font-semibold text-slate-500">{name}</h4>
-        <p className="text-md text-gray-600">{occupation}</p>
-        <div className="flex justify-center space-x-1">
+      <div className="mt-4 sm:mt-1">
+        <h4 className="text-xl sm:text-lg font-semibold text-slate-500">{name}</h4>
+        <p className="text-md sm:text-sm text-gray-600">{occupation}</p>
+        <div className="flex items-center justify-center space-x-1">
           <Image src={geo} alt="location icon" height={16} width={16} />
           <p className="text-sm text-slate-400">{location}</p>
         </div>
@@ -51,12 +50,12 @@ const AlumnusCard = ({
       </div>
 
       <Button
-        className="view_btn"
+        className="view_btn mt-2"
         onClick={() => router.push(`/profile/${id}`)}
       >
         View
       </Button>
-    </section>
+    </div>
   );
 };
 
