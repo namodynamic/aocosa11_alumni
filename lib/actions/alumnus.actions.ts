@@ -7,19 +7,13 @@ import { connectToDB } from "../database";
 
 export async function fetchAlumnus(userId: string) {
   try {
-    connectToDB();
+    await connectToDB();
 
-    return await User.findOne({ id: userId })
-    //   .populate({
-    //   path: "alumni",
-    //   model: User,
-    // });
+    return await User.findOne({ id: userId });
   } catch (error: any) {
-    throw new Error(`Failed to fetch user: ${error.message}`);
+    return Promise.reject(`Failed to fetch user: ${error.message}`);
   }
 }
-
-
 
 interface Params {
   userId: string;
@@ -45,7 +39,7 @@ export async function updateAlumnus({
   occupation,
 }: Params): Promise<void> {
   try {
-    connectToDB();
+    await connectToDB();
 
     // Construct the update object with the fields you want to update
     const updateObject: any = {
@@ -59,7 +53,8 @@ export async function updateAlumnus({
 
     // Add the birthday and location fields to the update object if provided
     if (birthday) {
-      updateObject.birthday = typeof birthday === 'string' ? new Date(birthday) : birthday;
+      updateObject.birthday =
+        typeof birthday === "string" ? new Date(birthday) : birthday;
     }
 
     if (location) {
@@ -70,23 +65,24 @@ export async function updateAlumnus({
     }
 
     // Use findOneAndUpdate to update the user document
-    await User.findOneAndUpdate({ id: userId }, updateObject, { upsert: true });
+    await User.findOneAndUpdate({ id: userId }, updateObject, {
+      upsert: true,
+      new: true,
+    });
 
     if (path === "/profile/edit") {
       revalidatePath(path);
     }
   } catch (error: any) {
-    throw new Error(`Failed to create/update user: ${error.message}`);
+    return Promise.reject(`Failed to create/update user: ${error.message}`);
   }
 }
-
 
 export async function fetchAlumni({
   userId,
   searchString = "",
   pageNumber = 1,
   pageSize = 23,
-  sortBy = "desc",
 }: {
   userId: string;
   searchString?: string;
@@ -95,7 +91,7 @@ export async function fetchAlumni({
   sortBy?: SortOrder;
 }) {
   try {
-    connectToDB();
+    await connectToDB();
 
     // Calculate the number of users to skip based on the page number and page size.
     const skipAmount = (pageNumber - 1) * pageSize;
@@ -116,10 +112,11 @@ export async function fetchAlumni({
       ];
     }
 
-    // Define the sort options for the fetched users based on createdAt field and provided sort order.
-    const sortOptions = { createdAt: sortBy };
+    // sort alphabetically by name
+    const sortOptions: Record<string, SortOrder> = { name: 1 };
 
     const usersQuery = User.find(query)
+      .lean()
       .sort(sortOptions)
       .skip(skipAmount)
       .limit(pageSize);
@@ -134,7 +131,7 @@ export async function fetchAlumni({
 
     return { users, isNext, totalUsersCount };
   } catch (error) {
-    console.error("Error fetching users:", error);
-    throw error;
+    console.error("Error fetching users. Details:", error);
+    return Promise.reject(error);
   }
 }
