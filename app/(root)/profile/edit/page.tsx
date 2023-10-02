@@ -8,7 +8,7 @@ const page = async () => {
   if (!user) return null;
 
   const alumnusInfo = await fetchAlumnus(user.id);
-  if (!alumnusInfo?.onboarded) redirect('/onboarding')
+  if (!alumnusInfo?.onboarded) return redirect('/onboarding')
 
   const alumnusData = {
     id: user?.id,
@@ -26,7 +26,7 @@ const page = async () => {
     <main className="mx-auto flex justify-start py-20 px-10 max-w-3xl flex-col">
       <h1 className="text-lg font-bold"> Edit Profile</h1>
       <p className="mt-3 text-base maroon_gradient">
-        Make any changes to your profile
+        Make changes to your profile
       </p>
 
       <section className="mt-10 p-10 glassmorphism">
