@@ -63,7 +63,7 @@ const ProfileHeader = ({
             src={imgUrl}
             alt="Profile picture"
             height={400}
-            width={200}
+            width={400}
             className="object-fill"
           />
         </div>
