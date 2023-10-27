@@ -97,7 +97,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container section_bg bg-auto mt-10 mx-auto">
+      <section className="container section_bg_img bg-cover bg-center mt-10 mx-auto">
         <div className="flex w-full items-center flex-col mt-8">
           <h1 className="text-4xl px-2 mt-16 mb-6 font-extrabold text-maroon leading-[1.15]">
             OUR FUTURE STARTS HERE.
@@ -109,7 +109,7 @@ export default function Home() {
             to see.
           </p>
 
-          <div className="bg-yellow-500 py-2 px-5 transform hover:scale-105 text-bold text-white mb-6">
+          <div className="bg-yellow-400 py-2 px-5 transition-transform duration-300 ease-in-out hover:scale-105 font-bold text-sm rounded-full text-white mb-6">
             <Link href="/registration">GROW WITH US</Link>
           </div>
         </div>
