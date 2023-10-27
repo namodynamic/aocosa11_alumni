@@ -22,7 +22,7 @@ const Hero = () => {
 
       <div className="bg-maroon rounded-md py-2 px-6 md:px-10 transition-transform duration-300 ease-in-out hover:scale-105 shadow-lg mb-6">
         <Link
-          href="/about-us"
+          href="/#about-us"
           className="font-bold text-white text-base md:text-xl py-2 px-2"
         >
           LEARN MORE
