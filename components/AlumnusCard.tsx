@@ -30,7 +30,7 @@ const AlumnusCard = ({
       <Image
         src={imgUrl || logo}
         onError={(e) => {
-          e.currentTarget.src = "assets/logo.png";
+          e.currentTarget.src = "assets/logo.jpeg";
           e.currentTarget.onerror = null;
         }}
         height={160}
