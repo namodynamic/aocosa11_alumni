@@ -4,8 +4,9 @@ import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
 
 export const metadata = {
-  title: "AOCOSA 05/11 ALUMNI",
-  description: "Adeola Odutola College Old Student Association 2005/2011 set.",
+  title: "AOCOSA: Adeola Odutola College Class of 2005/11 Alumni Association",
+  description:
+    "Welcome to the official website for the Adeola Odutola College Old Student Association Class of 2005/11! Reconnect with your fellow classmates, share cherished memories, and stay updated on exclusive reunions and events. Join us in celebrating the unique bond of the 2005/11 set and create lasting connections with your schoolmates",
 };
 
 export default function RootLayout({ children }) {
