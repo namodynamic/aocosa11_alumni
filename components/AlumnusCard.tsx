@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
-import { geo } from "@/public/assets";
+import { geo, logo } from "@/public/assets";
 
 interface Props {
   id: string;
@@ -28,10 +28,10 @@ const AlumnusCard = ({
   return (
     <div className="alumnus_card">
       <Image
-        src={imgUrl}
+        src={imgUrl || logo}
         onError={(e) => {
-          const imgElement = e.currentTarget as HTMLImageElement;
-          imgElement.style.display = "none";
+          e.currentTarget.src = "assets/logo.png";
+          e.currentTarget.onerror = null;
         }}
         height={160}
         width={160}
@@ -40,10 +40,12 @@ const AlumnusCard = ({
       />
 
       <div className="mt-4 sm:mt-1">
-        <h4 className="text-xl sm:text-lg font-semibold text-slate-500">{name}</h4>
+        <h4 className="text-xl sm:text-lg font-semibold text-slate-500">
+          {name}
+        </h4>
         <p className="text-md sm:text-sm text-gray-600">{occupation}</p>
         <div className="flex items-center justify-center space-x-1">
-          <Image src={geo} alt="location icon" height={16} width={16} />
+          <Image src={geo} alt="location icon" height={10} width={10} />
           <p className="text-sm text-slate-400">{location}</p>
         </div>
         <p className="text-sm text-slate-200">@{username}</p>

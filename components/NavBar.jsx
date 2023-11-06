@@ -2,7 +2,7 @@
 
 import { logo, hamburger, close } from "../public/assets";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { instagram, chevron } from "../public/assets";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -109,7 +109,7 @@ const NavBar = () => {
                         <div className="absolute p-4 rounded-md bg-white border border-gray-300 shadow-md">
                           <ul>
                             {item.subMenu.map((subMenuItem) => (
-                              <li key={subMenuItem.label}>
+                              <li key={subMenuItem.label} className="text-base font-medium">
                                 <Link
                                   href={
                                     subMenuItem.label === "Profile"
