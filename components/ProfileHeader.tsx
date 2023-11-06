@@ -46,7 +46,11 @@ const ProfileHeader = ({
     <div className="flex flex-col text-white bg-cover relative justify-start w-full bg-black/80 p-6 rounded-lg shadow-lg ">
       <Button
         onClick={handleEditClick}
-        className="self-end flex items-center space-x-1 text-gray-500 "
+        className={`${
+          accountId === authUserId
+            ? "self-end flex items-center space-x-1 text-gray-500"
+            : "hidden"
+        }`}
       >
         <Image
           src={edit}
@@ -57,14 +61,14 @@ const ProfileHeader = ({
         />
         Edit Profile
       </Button>
-      <div className="flex items-center gap-8">
-        <div className="relative overflow-hidden rounded-xl">
+      <div className="flex max-sm:flex-col sm:items-center gap-10 mt-5">
+        <div className="overflow-hidden rounded-xl">
           <Image
             src={imgUrl}
             alt="Profile picture"
             height={400}
             width={400}
-            className="object-fill"
+            className="object-cover"
           />
         </div>
         <div className="flex flex-col">
