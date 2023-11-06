@@ -14,7 +14,6 @@ export const navLinks = [
   {
     label: "About",
     subMenu: [
-      { href: "/executives", label: "Executives" },
       { href: "#mission", label: "Mission" },
       { href: "#vision", label: "Vision" },
       { href: "#constitution", label: "Constitution" },
@@ -35,6 +34,7 @@ export const navLinks = [
   {
     label: "Directory",
     subMenu: [
+      { href: "/executives", label: "Executives" },
       { href: "/alumni", label: "Alumni List" },
       { href: "/profile", label: "Profile" },
     ],
