@@ -1,6 +1,6 @@
 "use client";
 
-import { logo, hamburger, close } from "../public/assets";
+import { logo} from "../public/assets";
 import Image from "next/image";
 import { useState } from "react";
 import { instagram, chevron } from "../public/assets";
@@ -14,6 +14,7 @@ import {
   SignedOut,
 } from "@clerk/nextjs";
 import { navLinks } from "@/constants";
+import Hamburger from "hamburger-react";
 
 const NavBar = () => {
   const [toggle, setToggle] = useState(false);
@@ -109,7 +110,10 @@ const NavBar = () => {
                         <div className="absolute p-4 rounded-md bg-white border border-gray-300 shadow-md">
                           <ul>
                             {item.subMenu.map((subMenuItem) => (
-                              <li key={subMenuItem.label} className="text-base font-medium">
+                              <li
+                                key={subMenuItem.label}
+                                className="text-base font-medium"
+                              >
                                 <Link
                                   href={
                                     subMenuItem.label === "Profile"
@@ -160,33 +164,16 @@ const NavBar = () => {
             </SignedOut>
           </div>
 
-          {/* Dropdown menu  */}
-          <div className="hidden max-lg:block">
-            {!toggle && (
-              <Image
-                src={hamburger}
-                alt="Hamburger"
-                width={28}
-                height={28}
-                className="object-contain cursor-pointer"
-                onClick={() => setToggle(!toggle)}
-              />
-            )}
-
+          {/* Mobile menu  */}
+          <div className="lg:hidden">
+            <Hamburger toggled={toggle} toggle={setToggle} />
             <div
               className={`${
                 !toggle ? "hidden" : "flex"
-              } p-6 absolute bg-gray-200 bg-cover justify-center top-[-30px] w-full h-[80vh] rounded-md left-0 z-10`}
+              } p-6 absolute bg-gray-300 justify-center pt-0  top-[-35px] w-full h-[100vh] rounded-md left-0 z-10`}
             >
               <div className="absolute top-5 right-10">
-                <Image
-                  src={close}
-                  alt="close"
-                  width={34}
-                  height={34}
-                  className="object-contain cursor-pointer"
-                  onClick={() => setToggle(!toggle)}
-                />
+                <Hamburger toggled={toggle} toggle={setToggle} />
               </div>
               <div className="flex p-6 absolute z-10">
                 <ul>
