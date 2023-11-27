@@ -30,7 +30,7 @@ export const navLinks = [
     href: "#",
   },
   { href: "#gallery", label: "Gallery" },
-  { href: "#contact", label: "Contact" },
+  { href: "contact", label: "Contact" },
   {
     label: "Directory",
     subMenu: [

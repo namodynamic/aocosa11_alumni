@@ -1,6 +1,6 @@
 "use client";
 
-import { logo} from "../public/assets";
+import { logo } from "../public/assets";
 import Image from "next/image";
 import { useState } from "react";
 import { instagram, chevron } from "../public/assets";
@@ -15,6 +15,10 @@ import {
 } from "@clerk/nextjs";
 import { navLinks } from "@/constants";
 import Hamburger from "hamburger-react";
+// import Countdown from "./Countdown";
+
+import dynamic from "next/dynamic";
+const Countdown = dynamic(() => import("./Countdown"), { ssr: false });
 
 const NavBar = () => {
   const [toggle, setToggle] = useState(false);
@@ -36,10 +40,13 @@ const NavBar = () => {
   const pathname = usePathname();
   const { userId } = useAuth();
 
+  const expiryTimestamp = new Date("December 26, 2023 00:00:00").getTime();
+
   return (
     <>
-      <section className="padding-x flex gap-2 justify-end relative w-full bg-green-700">
-        <div className="flex gap-2">
+      <section className="padding-x flex gap-2 justify-between relative w-full bg-green-700">
+        <Countdown expiryTimestamp={expiryTimestamp} />
+        <div className="max-md:hidden flex gap-2">
           <div className="bg-white rounded-md px-1 py-1 hover:bg-yellow-400">
             <Link
               href="https://www.instagram.com/aocosa2011"

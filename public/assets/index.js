@@ -15,6 +15,7 @@ import chevron from "./icons/chevron.svg";
 import serch from "./icons/serch.svg";
 import edit from "./icons/edit.svg";
 import geo from "./icons/geo.svg";
+import contact from "./icons/contact.svg";
 
 export {
   logo,
@@ -34,4 +35,5 @@ export {
   serch,
   edit,
   geo,
+  contact,
 };
