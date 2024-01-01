@@ -17,9 +17,9 @@ export const navLinks = [
       { href: "#mission", label: "Mission" },
       { href: "#vision", label: "Vision" },
       { href: "#constitution", label: "Constitution" },
+      { href: "/dues", label: "Dues" },
       { href: "#history", label: "History" },
     ],
-    href: "/about",
   },
   {
     label: "News",
@@ -27,10 +27,9 @@ export const navLinks = [
       { href: "#latest-news", label: "Latest News" },
       { href: "#archives", label: "Archives" },
     ],
-    href: "#",
   },
   { href: "#gallery", label: "Gallery" },
-  { href: "contact", label: "Contact" },
+  { href: "/contact", label: "Contact" },
   {
     label: "Directory",
     subMenu: [
@@ -38,7 +37,6 @@ export const navLinks = [
       { href: "/alumni", label: "Alumni List" },
       { href: "/profile", label: "Profile" },
     ],
-    href: "/directory",
   },
 ];
 

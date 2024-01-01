@@ -25,7 +25,7 @@ module.exports = {
         grey: "#747A88",
       },
       backgroundImage: {
-        'pattern': "url('/pattern.png')",
+        'dotted-pattern': "url('/assets/dotted-pattern.png')",
         'hero-bg': "url('/hero-bg.png')"
       }
     },

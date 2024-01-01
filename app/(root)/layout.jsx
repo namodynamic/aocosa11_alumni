@@ -1,6 +1,6 @@
 import "../globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-import NavBar from "../../components/NavBar";
+import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
 export const metadata = {
@@ -14,14 +14,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <ClerkProvider>
-          <div className="main">
-            <div className="gradient" />
+          <div className="flex flex-col min-h-screen">
+            <Header />
+            <main className="container flex-1 mx-auto py-8">{children}</main>
+            <Footer />
           </div>
-          <header>
-            <NavBar />
-          </header>
-          <div className="container mx-auto py-8">{children}</div>
-          <Footer />
         </ClerkProvider>
       </body>
     </html>
