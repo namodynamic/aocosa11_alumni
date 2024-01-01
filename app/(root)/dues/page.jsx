@@ -1,6 +1,6 @@
 const page = () => {
   return (
-    <main className="padding-x xl:flex-row flex flex-col py-40 max-sm:mt-12 relative gap-10">
+    <main className="padding-x xl:flex-row flex flex-col relative gap-10">
       <div className="flex flex-col glassmorphism justify-start">
         <h1 className="text-4xl font-bold ">
           Pay your monthly due into the account below:

@@ -1,11 +1,10 @@
 import Link from "next/link";
 import Hero from "../../components/Hero";
 
-
 export default function Home() {
   return (
-    <main className="relative">
-      <div className="mt-20 hero-bg w-full bg-cover bg-center">
+    <main className="relative py-20">
+      <div className="hero-bg w-full bg-cover bg-center">
         <Hero />
       </div>
 

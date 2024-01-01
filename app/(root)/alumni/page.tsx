@@ -27,7 +27,7 @@ const page = async ({
   const alumniData = result.users;
 
   return (
-    <section className="padding-x max-sm:py-20 py-40 max-sm:mt-12">
+    <section className="padding-x">
       <div className="flex flex-col justify-start">
         <div className="flex flex-col justify-start relative gap-5">
           <h2 className="text-4xl font-bold ">

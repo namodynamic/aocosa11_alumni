@@ -13,7 +13,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
 
     if (!userInfo?.onboarded) redirect("/onboarding");
     return (
-      <section className="padding-x py-40 mx-auto">
+      <section className="padding-x mx-auto">
         <div className="">
           <ProfileHeader
             accountId={userInfo.id}
@@ -33,7 +33,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
     console.error(error);
 
     return (
-      <div className="padding-x min-h-screen py-40 mx-auto text-center">
+      <div className="padding-x min-h-screen mx-auto text-center">
         Error: An error occurred while fetching user data.
       </div>
     );
