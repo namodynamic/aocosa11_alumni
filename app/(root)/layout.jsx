@@ -5,9 +5,9 @@ import Footer from "../../components/Footer";
 
 export const metadata = {
   title:
-    "AOCOSA: Adeola Odutola College Old Student Association Class of 2005/11",
+    "AOCOSA 2005/11",
   description:
-    "Welcome to the official website for the Adeola Odutola College Old Student Association Class of 2005/11! Reconnect with your fellow classmates, share cherished memories, and stay updated on exclusive reunions and events. Join us in celebrating the unique bond of the 2005/11 set and create lasting connections with your schoolmates",
+    "Welcome to the official website of Adeola Odutola College Old Student Association Class of 2005/11! Reconnect with your fellow classmates, share cherished memories, and stay updated on exclusive reunions and events. Join us in celebrating the unique bond of the 2005/11 set and create lasting connections with your schoolmates",
 };
 
 export default function RootLayout({ children }) {
