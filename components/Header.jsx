@@ -60,7 +60,7 @@ const NavBar = () => {
         </div>
       </section> */}
 
-      <div className="flex wrapper  py-4 border-b  w-full  justify-between items-center">
+      <div className="flex wrapper  py-4  w-full  justify-between items-center">
         <Link href="/" className="flex gap-2 flex-center">
           <Image
             src={logo}
@@ -70,10 +70,10 @@ const NavBar = () => {
             className="object-contain rounded-full"
           />
           <div>
-            <p className="font-Manrope font-extrabold text-lg tracking-wide maroon_gradient">
+            <p className="font-manrope font-extrabold text-lg tracking-tight">
               AOCOSA 2005/11
             </p>
-            <p className="font-bold font-inter text-sm text-slate-500 tracking-tight">
+            <p className="font-medium font-manrope text-sm text-slate-500 tracking-tight">
               Network And Growth
             </p>
           </div>

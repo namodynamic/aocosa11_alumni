@@ -10,6 +10,7 @@ module.exports = {
     extend: {
       fontFamily: {
         inter: ["Inter", "sans-serif"],
+        manrope: ['Manrope', 'sans-serif'],
       },
       screens: {
         'xs': '475px',

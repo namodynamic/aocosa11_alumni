@@ -48,7 +48,7 @@ const MobileNav = () => {
               height={30}
               className="object-contain rounded-full"
             />
-            <p className="font-Manrope text-sm items-center tracking-wide maroon_gradient">
+            <p className="font-Manrope text-sm font-bold items-center tracking-tight">
               AOCOSA 2005/11
             </p>
           </div>

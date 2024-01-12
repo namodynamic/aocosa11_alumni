@@ -12,7 +12,7 @@ const Hero = () => {
             <br className="max-md:hidden" /> {""}
             OUR FUTURE?
           </h1>
-          <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+          <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed font-manrope lg:text-base/relaxed xl:text-xl/relaxed">
             The AOCOSA 05/11 Set Alumni is a non-profit, a non-religious, a non-
             governmental and a non-political association of old students of
             Adeola Odutola College (AOC) 2011 set who have recognized the need
@@ -21,7 +21,7 @@ const Hero = () => {
             impact on society.
             <br />
             <br />
-            <span className="font-bold">Together we can make a profound difference!</span>
+            <strong>Together we can make a profound difference!</strong>
           </p>
           <div className="flex flex-col gap-2 min-[400px]:flex-row">
             <Link
