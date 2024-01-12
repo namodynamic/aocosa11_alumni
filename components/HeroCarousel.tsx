@@ -6,12 +6,12 @@ import Image from "next/image";
 
 const heroImages = [
     { imgUrl: "/assets/photo3.jpg", alt: "reunion" },
-    { imgUrl: "/assets/photo4.jpg", alt: "reunion" },
+    { imgUrl: "/assets/photo4.JPG", alt: "reunion" },
     { imgUrl: "/assets/photo2.jpg", alt: "reunion" },
     { imgUrl: "/assets/photo.jpg", alt: "reunion" },
-    { imgUrl: "/assets/photo5.jpg", alt: "reunion" },
-    { imgUrl: "/assets/photo6.jpg", alt: "reunion" },
-    { imgUrl: "/assets/photo7.jpg", alt: "reunion" },
+    { imgUrl: "/assets/photo5.JPG", alt: "reunion" },
+    { imgUrl: "/assets/photo6.JPG", alt: "reunion" },
+    { imgUrl: "/assets/photo7.JPG", alt: "reunion" },
 ];
 
 const HeroCarousel = () => {
@@ -29,9 +29,9 @@ const HeroCarousel = () => {
           <Image
             src={image.imgUrl}
             alt={image.alt}
-            height={484}
+            height={700}
             width={484}
-            className="object-contain"
+            className="object-contain rounded-xl"
             key={image.alt}
           />
         ))}
