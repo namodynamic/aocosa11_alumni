@@ -12,19 +12,6 @@
   scroll-behavior: smooth;
 }
 
-.hero-bg {
-  background-image: linear-gradient(
-    115deg,
-      rgba(45, 213, 121, 0.7),
-      rgba(7, 134, 33, 0.7)
-    ),
-    url("/assets/aoc4.jpeg");
-  z-index: 2;
-  opacity: 1;
-  top: 0;
-  content: "";
-  
-}
 .news_bg {
   background-image: linear-gradient(
       115deg,
@@ -94,7 +81,7 @@
 }
 
 .head_text {
-  @apply mt-16 text-5xl  text-yellow-400 text-shadow mb-6 font-extrabold leading-[1.15] text-center;
+  @apply mt-16 text-5xl  text-yellow-400 text-shadow mb-6 font-extrabold leading-[1.15];
 }
 .sub_head_text {
   @apply lg:max-w-lg mb-8 font-inter text-white whitespace-pre-line text-shadow font-extrabold text-center;
@@ -182,4 +169,8 @@
 
 .max-container {
   @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)];
+}
+
+.hero-carousel {
+  @apply relative sm:px-10 py-5 sm:pt-20  items-center flex pb-5 max-w-[560px] h-[700px] max-sm:h-[500px] w-full bg-[#F2F4F7] rounded-xl sm:mx-auto;
 }

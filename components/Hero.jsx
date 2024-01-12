@@ -1,32 +1,38 @@
 import Link from "next/link";
 import React from "react";
+import HeroCarousel from '@/components/HeroCarousel'
 
 const Hero = () => {
   return (
-    <section className="w-full flex items-center flex-col">
-      <h1 className="head_text">
-        HOW WILL WE FORGE
-        <br className="max-md:hidden" /> {""}
-        OUR FUTURE?
-      </h1>
-      <p className="sub_head_text">
-        The AOCOSA 05/11 Set Alumni is a non-profit, a non-religious, a non-
-        governmental and a non-political association of old students of Adeola
-        Odutola College (AOC) 2011 set who have recognized the need to network
-        and foster meaningful connections for personal and professional
-        development, while also striving to create a positive impact on society.
-        <br />
-        <br />
-        Together we can make a profound difference!
-      </p>
-
-      <div className="bg-maroon rounded-md py-2 px-6 md:px-10 transition-transform duration-300 ease-in-out hover:scale-105 shadow-lg mb-6">
-        <Link
-          href="/#about-us"
-          className="font-bold text-white text-base md:text-xl py-2 px-2"
-        >
-          LEARN MORE
-        </Link>
+    <section className="w-full">
+      <div className="flex wrapper max-xl:flex-col gap-16">
+        <div className="flex flex-col justify-center space-y-8">
+          <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+            HOW WILL WE FORGE
+            <br className="max-md:hidden" /> {""}
+            OUR FUTURE?
+          </h1>
+          <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            The AOCOSA 05/11 Set Alumni is a non-profit, a non-religious, a non-
+            governmental and a non-political association of old students of
+            Adeola Odutola College (AOC) 2011 set who have recognized the need
+            to network and foster meaningful connections for personal and
+            professional development, while also striving to create a positive
+            impact on society.
+            <br />
+            <br />
+            <span className="font-bold">Together we can make a profound difference!</span>
+          </p>
+          <div className="flex flex-col gap-2 min-[400px]:flex-row">
+            <Link
+              href="/#about-us"
+              className="inline-flex h-10 items-center justify-center rounded-md bg-maroon px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-500"
+            >
+              LEARN MORE
+            </Link>
+          </div>
+        </div>
+          <HeroCarousel />
       </div>
     </section>
   );

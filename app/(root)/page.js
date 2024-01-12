@@ -6,8 +6,8 @@ export default function Home() {
     <>
         <Hero />
 
-      <section className="mx-auto py-12">
-        <div className="wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+      <section className="mx-auto">
+        <div className="wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
           <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
             <h2 className="text-xl font-semibold mb-4">
               Welcome to AOCOSA Alumni!
@@ -42,7 +42,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className=" news_bg bg-cover mx-auto py-12">
+      <section className=" news_bg bg-cover mx-auto mt-10">
         <div className="text-center wrapper">
           <h2 className="text-2xl font-semibold text-white mb-4">
             Latest News and Updates
@@ -89,7 +89,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container section_bg_img bg-cover bg-center mt-10 mx-auto">
+      <section className=" section_bg_img bg-cover bg-center mx-auto">
         <div className="flex wrapper items-center flex-col mt-8">
           <h1 className="text-3xl px-2 mt-16 mb-6 font-extrabold text-maroon leading-[1.15]">
             OUR FUTURE STARTS HERE.
