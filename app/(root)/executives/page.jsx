@@ -3,10 +3,10 @@ import { excos } from "../../../constants";
 
 const page = () => {
   return (
-    <section className="padding-x">
+    <section className="wrapper sm:mt-8">
       <div className="flex flex-col justify-start relative gap-5">
-        <h2 className="text-4xl font-bold ">
-          Meet <span className="maroon_gradient">Our</span> Executives 
+        <h2 className="sm:text-5xl text-3xl font-bold ">
+          Meet Our Executives 
         </h2>
         <p className="lg:max-w-lg mt-2 font-inter text-slate-950">
           The association is led by a dynamic and versatile team steering the

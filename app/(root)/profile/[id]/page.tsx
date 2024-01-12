@@ -13,7 +13,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
 
     if (!userInfo?.onboarded) redirect("/onboarding");
     return (
-      <section className="padding-x mx-auto">
+      <section className="w-full bg-black/80">
         <div className="">
           <ProfileHeader
             accountId={userInfo.id}

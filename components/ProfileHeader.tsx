@@ -43,7 +43,7 @@ const ProfileHeader = ({
     : "No birthday available";
 
   return (
-    <div className="flex flex-col text-white bg-cover relative justify-start w-full bg-black/80 p-6 rounded-lg shadow-lg ">
+    <div className="flex wrapper flex-col text-white justify-start">
       <Button
         onClick={handleEditClick}
         className={`${

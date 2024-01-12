@@ -49,7 +49,7 @@ const MobileNav = () => {
               className="object-contain rounded-full"
             />
             <p className="font-Manrope text-sm items-center tracking-wide maroon_gradient">
-              AOCOSA 05/11 Alumni
+              AOCOSA 2005/11
             </p>
           </div>
 

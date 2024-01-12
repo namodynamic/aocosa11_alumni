@@ -3,16 +3,13 @@ import Hero from "../../components/Hero";
 
 export default function Home() {
   return (
-    <main className="relative py-20">
-      <div className="hero-bg w-full bg-cover bg-center">
+    <>
         <Hero />
-      </div>
 
-      <section className="container mx-auto py-12">
-        <div className="padding-x grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-          {/* Feature 1 */}
+      <section className="mx-auto py-12">
+        <div className="wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
           <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
-            <h2 className="text-xl font-semibold maroon_gradient mb-4">
+            <h2 className="text-xl font-semibold mb-4">
               Welcome to AOCOSA Alumni!
             </h2>
             <p className="text-gray-700">
@@ -22,7 +19,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Feature 2 */}
           <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
             <h2 className="text-xl font-semibold text-black mb-4">
               Stay Connected
@@ -34,7 +30,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Feature 3 */}
           <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
             <h2 className="text-xl font-semibold text-black mb-4">
               Get Involved
@@ -47,8 +42,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container news_bg bg-cover mx-auto py-12">
-        <div className="text-center">
+      <section className=" news_bg bg-cover mx-auto py-12">
+        <div className="text-center wrapper">
           <h2 className="text-2xl font-semibold text-white mb-4">
             Latest News and Updates
           </h2>
@@ -58,8 +53,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="padding-x grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-          {/* News Card 1 */}
+        <div className="wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
           <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
             <h3 className="text-lg font-bold text-black mb-2">
               Alumni Reunion Event
@@ -71,7 +65,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* News Card 2 */}
           <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
             <h3 className="text-lg font-bold text-black mb-2">
               New Alumni Mentoring Program
@@ -83,7 +76,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* News Card 3 */}
           <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
             <h3 className="text-lg font-bold text-black mb-2">
               Community Service Project
@@ -98,8 +90,8 @@ export default function Home() {
       </section>
 
       <section className="container section_bg_img bg-cover bg-center mt-10 mx-auto">
-        <div className="flex w-full items-center flex-col mt-8">
-          <h1 className="text-4xl px-2 mt-16 mb-6 font-extrabold text-maroon leading-[1.15]">
+        <div className="flex wrapper items-center flex-col mt-8">
+          <h1 className="text-3xl px-2 mt-16 mb-6 font-extrabold text-maroon leading-[1.15]">
             OUR FUTURE STARTS HERE.
           </h1>
           <p className="sub_head_text padding-x">
@@ -114,6 +106,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 }

@@ -1,7 +1,7 @@
 const page = () => {
   return (
-    <main className="padding-x xl:flex-row flex flex-col relative gap-10">
-      <div className="flex flex-col glassmorphism justify-start">
+    <section className="wrapper xl:flex-row sm:mt-10 flex flex-col gap-10">
+      <div className="flex-1 flex-col glassmorphism justify-start">
         <h1 className="text-4xl font-bold ">
           Pay your monthly due into the account below:
         </h1>
@@ -27,7 +27,7 @@ const page = () => {
           projects projects.
         </p>
       </div>
-    </main>
+    </section>
   );
 };
 

@@ -49,7 +49,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="relative flex lg:flex-row flex-col padding-x xl:flex-row py-40 max-sm:mt-12 gap-4">
+    <section className="wrapper flex lg:flex-row flex-col xl:flex-row sm:mt-12 gap-4">
       <div className="flex-1 min-w-[50%] flex flex-col">
         <h1 className="sm:text-5xl text-3xl font-semibold sm:leading-snug">
           Get in Touch with us

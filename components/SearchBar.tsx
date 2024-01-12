@@ -29,7 +29,7 @@ function Searchbar({ routeType }: Props) {
   }, [search, routeType]);
 
   return (
-    <div className="flex gap-1 px-4 bg-white py-2 ">
+    <div className="flex gap-1 px-4 border rounded-full bg-white py-2 ">
       <Image
         src={serch}
         alt="search icon"
@@ -43,7 +43,7 @@ function Searchbar({ routeType }: Props) {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder={`${
-          routeType !== "/alumni" ? "Search an alumnus" : "Search creators"
+          routeType !== "/alumni" ? "Search an alumnus by name" : "Search creators"
         }`}
         className="searchbar_input"
       />

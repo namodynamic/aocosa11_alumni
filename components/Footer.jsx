@@ -4,11 +4,10 @@ import { instagram, contact } from "../public/assets";
 
 const Footer = () => {
   return (
-    <footer className="bg-maroon relative w-full mx-auto pb-2 pt-0 flex flex-col gap-7 font-inter">
-      <hr className="border-yellow-400 w-full border-t-2" />
-      <div className="flex flex-wrap gap-7 px-8 items-center justify-between ">
-        <p className="text-sm text-white">
-          &copy; {new Date().getFullYear()} <strong>AOCOSA 05/11 SET</strong> .
+    <footer className="relative pb-2 pt-5 flex flex-col gap-7 font-inter">
+      <div className="flex wrapper  border-t-2 flex-wrap gap-7 px-8 items-center justify-between ">
+        <p className="text-sm ">
+          &copy; {new Date().getFullYear()} <strong>AOCOSA 2005/11 SET</strong> .
           All rights reserved.
         </p>
         <div className="flex gap-3 justify-center items-center">
