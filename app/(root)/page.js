@@ -6,7 +6,7 @@ export default function Home() {
     <>
         <Hero />
 
-      <section className="mx-auto">
+      <section className="mx-auto sm:mt-10">
         <div className="wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
           <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition duration-300 transform hover:scale-105">
             <h2 className="text-xl font-semibold mb-4">

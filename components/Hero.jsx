@@ -5,7 +5,7 @@ import HeroCarousel from '@/components/HeroCarousel'
 const Hero = () => {
   return (
     <section className="w-full">
-      <div className="flex wrapper max-xl:flex-col gap-16">
+      <div className="flex wrapper max-xl:flex-col gap-16 sm:gap-32">
         <div className="flex flex-col justify-center space-y-8">
           <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">
             HOW WILL WE FORGE
