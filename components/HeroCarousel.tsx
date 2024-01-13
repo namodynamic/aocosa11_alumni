@@ -5,37 +5,47 @@ import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
 
 const heroImages = [
-    { imgUrl: "/assets/photo3.jpg", alt: "reunion" },
-    { imgUrl: "/assets/photo4.JPG", alt: "reunion" },
-    { imgUrl: "/assets/photo2.jpg", alt: "reunion" },
-    { imgUrl: "/assets/photo.jpg", alt: "reunion" },
-    { imgUrl: "/assets/photo5.JPG", alt: "reunion" },
-    { imgUrl: "/assets/photo6.JPG", alt: "reunion" },
-    { imgUrl: "/assets/photo7.JPG", alt: "reunion" },
+  { imgUrl: "/assets/slide1.svg", alt: "reunion" },
+  { imgUrl: "/assets/slide2.svg", alt: "reunion" },
+  { imgUrl: "/assets/slide3.svg", alt: "reunion" },
+  { imgUrl: "/assets/slide4.svg", alt: "reunion" },
+  { imgUrl: "/assets/slide5.svg", alt: "reunion" },
+  { imgUrl: "/assets/slide6.svg", alt: "reunion" },
+  { imgUrl: "/assets/slide7.svg", alt: "reunion" },
+  { imgUrl: "/assets/slide8.svg", alt: "reunion" },
+  { imgUrl: "/assets/slide9.svg", alt: "reunion" },
+  { imgUrl: "/assets/slide10.svg", alt: "reunion" },
 ];
 
 const HeroCarousel = () => {
   return (
-    <div className="hero-carousel">
+    <div className="hero-carousel p-5 shadow-md shadow-black">
       <Carousel
         showThumbs={false}
         autoPlay
         infiniteLoop
         interval={2000}
-        showArrows={true}
+        showArrows={false}
         showStatus={false}
       >
         {heroImages.map((image) => (
           <Image
             src={image.imgUrl}
             alt={image.alt}
-            height={700}
-            width={484}
-            className="object-contain rounded-xl"
+            height={500}
+            width={500}
+            className="object-contain rounded-lg"
             key={image.alt}
           />
         ))}
       </Carousel>
+      <Image
+        src="assets/icons/hand-drawn-arrow.svg"
+        alt="arrow"
+        width={175}
+        height={175}
+        className="max-xl:hidden absolute -left-[15%] bottom-0 z-0"
+      />
     </div>
   );
 };
