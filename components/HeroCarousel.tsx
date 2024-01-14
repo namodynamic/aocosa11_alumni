@@ -5,15 +5,15 @@ import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
 
 const heroImages = [
-  { imgUrl: "/assets/slide1.svg", alt: "reunion" },
-  { imgUrl: "/assets/slide2.svg", alt: "reunion" },
-  { imgUrl: "/assets/slide3.svg", alt: "reunion" },
-  { imgUrl: "/assets/slide4.svg", alt: "reunion" },
-  { imgUrl: "/assets/slide5.svg", alt: "reunion" },
-  { imgUrl: "/assets/slide6.svg", alt: "reunion" },
-  { imgUrl: "/assets/slide7.svg", alt: "reunion" },
-  { imgUrl: "/assets/slide8.svg", alt: "reunion" },
-  { imgUrl: "/assets/slide9.svg", alt: "reunion" },
+  { imgUrl: "/assets/slide1.jpg", alt: "reunion" },
+  { imgUrl: "/assets/slide2.jpg", alt: "reunion" },
+  { imgUrl: "/assets/slide3.jpg", alt: "reunion" },
+  { imgUrl: "/assets/slide4.jpg", alt: "reunion" },
+  { imgUrl: "/assets/slide5.jpg", alt: "reunion" },
+  { imgUrl: "/assets/slide6.jpg", alt: "reunion" },
+  { imgUrl: "/assets/slide7.jpg", alt: "reunion" },
+  { imgUrl: "/assets/slide8.jpg", alt: "reunion" },
+  { imgUrl: "/assets/slide9.jpg", alt: "reunion" },
   { imgUrl: "/assets/slide10.svg", alt: "reunion" },
 ];
 
