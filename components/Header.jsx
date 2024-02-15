@@ -51,7 +51,7 @@ const NavBar = () => {
             <p className="font-manrope font-extrabold text-lg tracking-tight">
               AOCOSA 2005/11
             </p>
-            <p className="font-medium font-manrope text-sm text-slate-500 tracking-tight">
+            <p className="font-medium font-manrope text-sm text-slate-400 tracking-tight">
               Network And Growth
             </p>
           </div>
