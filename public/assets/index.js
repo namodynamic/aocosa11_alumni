@@ -11,7 +11,6 @@ import hamburger from "./icons/hamburger.svg";
 import close from "./icons/close.png";
 import instagram from "./icons/instagram.svg";
 import profile from "./profile.svg";
-import chevron from "./icons/chevron.svg";
 import serch from "./icons/serch.svg";
 import edit from "./icons/edit.svg";
 import geo from "./icons/geo.svg";
@@ -31,7 +30,6 @@ export {
   close,
   instagram,
   profile,
-  chevron,
   serch,
   edit,
   geo,
