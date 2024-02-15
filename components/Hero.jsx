@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import HeroCarousel from '@/components/HeroCarousel'
+import HeroCarousel from "@/components/HeroCarousel";
 
 const Hero = () => {
   return (
@@ -12,13 +12,13 @@ const Hero = () => {
             <br className="max-md:hidden" /> {""}
             OUR FUTURE?
           </h1>
-          <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed font-manrope lg:text-base/relaxed xl:text-xl/relaxed">
-            The AOCOSA 05/11 Set Alumni is a non-profit, a non-religious, a non-
+          <p className="prose md:prose-lg lg:prose-xl">
+            The AOCOSA 2005/11 Alumni is a non-profit, a non-religious, a non-
             governmental and a non-political association of old students of
-            Adeola Odutola College (AOC) 2011 set who have recognized the need
-            to network and foster meaningful connections for personal and
-            professional development, while also striving to create a positive
-            impact on society.
+            Adeola Odutola College. We are a group of 2005/11 set who have
+            recognized the need to network and foster meaningful connections for
+            personal and professional development, while also striving to create
+            a positive impact on society.
             <br />
             <br />
             <strong>Together we can make a profound difference!</strong>
@@ -32,7 +32,7 @@ const Hero = () => {
             </Link>
           </div>
         </div>
-          <HeroCarousel />
+        <HeroCarousel />
       </div>
     </section>
   );

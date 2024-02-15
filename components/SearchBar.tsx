@@ -43,7 +43,7 @@ function Searchbar({ routeType }: Props) {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder={`${
-          routeType !== "/alumni" ? "Search an alumnus by name" : "Search creators"
+          routeType !== "/alumni" ? "Search for an alumnus by name or username" : "Search creators"
         }`}
         className="searchbar_input"
       />

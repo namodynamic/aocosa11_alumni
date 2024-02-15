@@ -11,7 +11,7 @@ const Footer = () => {
           All rights reserved.
         </p>
         <div className="flex gap-3 justify-center items-center">
-          <Link href="/contact" className="bg-white  cursor-pointer">
+          <Link href="/contact" className="cursor-pointer">
             <Image
               src={contact}
               alt="contact"
@@ -22,7 +22,7 @@ const Footer = () => {
             href="https://www.instagram.com/aocosa2011"
             target="_blank"
             rel="noopener noreferrer"
-            className=" bg-white cursor-pointer"
+            className=" cursor-pointer"
           >
             <Image
               src={instagram}

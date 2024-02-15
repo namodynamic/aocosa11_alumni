@@ -3,7 +3,6 @@
 import { logo } from "../public/assets";
 import Image from "next/image";
 import { useState } from "react";
-import { instagram, chevron } from "../public/assets";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -15,7 +14,7 @@ import {
 } from "@clerk/nextjs";
 import { navLinks } from "@/constants";
 import MobileNav from "./MobileNav";
-import Hamburger from "hamburger-react";
+import { ChevronDown } from "lucide-react";
 
 const NavBar = () => {
   const [toggle, setToggle] = useState(false);
@@ -38,28 +37,7 @@ const NavBar = () => {
   const { userId } = useAuth();
 
   return (
-    <header>
-      {/* <section className="padding-x flex gap-2 justify-between relative w-full bg-green-700">
-        <div className="max-md:hidden flex gap-2">
-          <div className="bg-white rounded-md px-1 py-1 hover:bg-yellow-400">
-            <Link
-              href="https://www.instagram.com/aocosa2011"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src={instagram}
-                alt="instagram"
-                className="object-contain cursor-pointer"
-              />
-            </Link>
-          </div>
-          <div className="text-white text-lg font-medium px-2 rounded-md hover:bg-white border border-yellow-400 hover:text-black bg-maroon">
-            <Link href="/dues">Pay Dues Here</Link>
-          </div>
-        </div>
-      </section> */}
-
+    <header className="border-b-2">
       <div className="flex wrapper  py-4  w-full  justify-between items-center">
         <Link href="/" className="flex gap-2 flex-center">
           <Image
@@ -83,7 +61,15 @@ const NavBar = () => {
           {navLinks.map((item) => {
             let href = item.href;
             const isActive =
-              (pathname.includes(href) && href.length > 1) || pathname === href;
+              (pathname.includes(href) && href.length > 1) ||
+              pathname === href ||
+              (item.subMenu &&
+                item.subMenu.some(
+                  (subMenuItem) =>
+                    pathname === subMenuItem.href ||
+                    (subMenuItem.label === "Profile" &&
+                      pathname === `/profile/${userId}`)
+                ));
             const hasSubMenu = item.subMenu && item.subMenu.length > 0;
             const showDropdown = activeDropdown === item.label;
 
@@ -91,20 +77,20 @@ const NavBar = () => {
               <li key={item.label}>
                 {hasSubMenu ? (
                   <div
-                    className={`${
+                    className={` ${
                       isActive ? "text-maroon" : "text-black"
-                    } font-bold leading-normal text-lg hover:text-maroon`}
+                    } font-bold leading-normal cursor-pointer text-lg hover:text-maroon`}
                     onMouseEnter={() => toggleDropdown(item.label)}
                     onMouseLeave={() => toggleDropdown(item.label)}
                   >
-                    <div className="flex relative">
-                      {item.label}
-                      <Image
-                        src={chevron}
-                        alt="chevron icon"
-                        className="inline-block ml-1"
-                      />
-                    </div>
+                    {item.label}
+                    <ChevronDown
+                      className={`inline-block top-[1px] ml-1 transition-transform duration-200 transform ${
+                        activeDropdown === item.label ? "rotate-180" : ""
+                      }`}
+                      aria-hidden="true"
+                    />
+
                     {showDropdown && (
                       <div className="absolute p-4 rounded-md bg-white border border-gray-300 shadow-md">
                         <ul>

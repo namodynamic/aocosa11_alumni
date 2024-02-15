@@ -14,11 +14,11 @@ export const navLinks = [
   {
     label: "About",
     subMenu: [
+      { href: "#about-us", label: "About Us" },
+      { href: "#constitution", label: "Constitution" },
       { href: "#mission", label: "Mission" },
       { href: "#vision", label: "Vision" },
-      { href: "#constitution", label: "Constitution" },
       { href: "/dues", label: "Dues" },
-      { href: "#history", label: "History" },
     ],
   },
   {

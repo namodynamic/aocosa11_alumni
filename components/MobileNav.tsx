@@ -2,7 +2,6 @@
 
 import { logo } from "../public/assets";
 import { useState } from "react";
-import { chevron } from "../public/assets";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SignInButton, useAuth, SignedOut } from "@clerk/nextjs";
@@ -10,6 +9,7 @@ import { navLinks } from "@/constants";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
+import { ChevronDown } from "lucide-react";
 
 const MobileNav = () => {
   const [toggle, setToggle] = useState(false);
@@ -58,8 +58,14 @@ const MobileNav = () => {
             {navLinks.map((item) => {
               let href = item.href;
               const isActive =
-                (pathname.includes(href) && href.length > 1) ||
-                pathname === href;
+                (pathname.includes(href) && href.length > 1) || pathname === href ||
+                (item.subMenu &&
+                  item.subMenu.some(
+                    (subMenuItem) =>
+                      pathname === subMenuItem.href ||
+                      (subMenuItem.label === "Profile" &&
+                        pathname === `/profile/${userId}`)
+                  ));
               const hasSubMenu = item.subMenu && item.subMenu.length > 0;
               const showDropdown = activeDropdown === item.label;
               return (
@@ -76,10 +82,12 @@ const MobileNav = () => {
                     >
                       <div className="justify-between flex">
                         {item.label}
-                        <Image
-                          src={chevron}
-                          alt="chevron icon"
-                          className="inline-block ml-1"
+
+                        <ChevronDown
+                          className={`inline-block top-[1px] ml-1 transition-transform duration-200 transform ${
+                            activeDropdown === item.label ? "rotate-180" : ""
+                          }`}
+                          aria-hidden="true"
                         />
                       </div>
                       {showDropdown && (
