@@ -34,7 +34,7 @@ export const navLinks = [
     label: "Directory",
     subMenu: [
       { href: "/executives", label: "Executives" },
-      { href: "/alumni", label: "Alumni List" },
+      { href: "/alumni", label: "Alumni" },
       { href: "/profile", label: "Profile" },
     ],
   },

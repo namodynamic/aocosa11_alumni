@@ -54,10 +54,13 @@ const Contact = () => {
         <h1 className="sm:text-5xl text-3xl font-semibold sm:leading-snug">
           Get in Touch with us
         </h1>
+        <p className="mt-14 text-lg text-gray-500 font-normal">
+          Have questions or feedback? We'd love to hear from you!
+        </p>
 
         <form
           ref={formRef}
-          className="w-full flex flex-col gap-7 mt-14"
+          className="w-full flex flex-col gap-7 mt-10"
           onSubmit={handleSubmit}
         >
           <label className="text-black font-semibold">

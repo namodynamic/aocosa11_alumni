@@ -26,17 +26,17 @@ const AlumnusCard = ({
   const router = useRouter();
 
   return (
-    <div className="alumnus_card">
+    <div className="rounded-xl w-full text-center bg-white border-b-2 border-black shadow-md overflow-hidden">
       <Image
         src={imgUrl || logo}
         onError={(e) => {
           e.currentTarget.src = "assets/logo.jpeg";
           e.currentTarget.onerror = null;
         }}
-        height={160}
-        width={160}
+        height={200}
+        width={200}
         alt="Profile image"
-        className="rounded-full h-36 w-36 object-fill mx-auto"
+        className="w-full h-[180px] object-fit object-center hover:opacity-80"
       />
 
       <div className="mt-4 sm:mt-1">

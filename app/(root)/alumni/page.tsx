@@ -1,7 +1,7 @@
 import Pagination from "@/components/Pagination";
 import Searchbar from "@/components/SearchBar";
 import AlumnusCard from "@/components/AlumnusCard";
-import { fetchAlumnus, fetchAlumni } from "@/lib/actions/alumnus.actions";
+import { fetchAlumni } from "@/lib/actions/alumnus.actions";
 import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 
@@ -56,7 +56,7 @@ const page = async ({
         <Searchbar routeType="alumni" />
       </div>
 
-      <div className="mt-8 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 sm:gap-2 gap-10">
+      <div className="mt-8 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-3">
         {alumniData.length === 0 ? (
           <p className="w-full text-center text-base text-slate-500">
             Alumnus not found in our database!

@@ -19,7 +19,7 @@ const heroImages = [
 
 const HeroCarousel = () => {
   return (
-    <div className="hero-carousel p-5 shadow-md shadow-black">
+    <div className="hero-carousel p-5 shadow-md">
       <Carousel
         showThumbs={false}
         autoPlay
@@ -34,7 +34,7 @@ const HeroCarousel = () => {
             alt={image.alt}
             height={500}
             width={500}
-            className="object-contain rounded-lg"
+            className="object-contain"
             key={image.alt}
           />
         ))}

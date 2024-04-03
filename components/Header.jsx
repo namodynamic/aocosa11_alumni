@@ -92,33 +92,36 @@ const NavBar = () => {
                     />
 
                     {showDropdown && (
-                      <div className="absolute p-4 rounded-md bg-white border border-gray-300 shadow-md">
+                      <div className="relative">
+
+                      <div className="absolute z-30 w-[180px] justify-center rounded-md bg-white shadow-md">
                         <ul>
                           {item.subMenu.map((subMenuItem) => (
                             <li
-                              key={subMenuItem.label}
-                              className="text-base font-medium"
+                            key={subMenuItem.label}
+                            className="text-sm  px-4 py-[4px] font-semibold leading-normal hover:bg-gray-100"
                             >
                               <Link
                                 href={
                                   subMenuItem.label === "Profile"
-                                    ? `/profile/${userId}`
-                                    : subMenuItem.href
+                                  ? `/profile/${userId}`
+                                  : subMenuItem.href
                                 }
                                 className={`${
                                   pathname === subMenuItem.href ||
                                   (subMenuItem.label === "Profile" &&
-                                    pathname === `/profile/${userId}`)
-                                    ? "text-maroon"
-                                    : "text-slate-400"
-                                } hover:text-maroon`}
-                              >
+                                  pathname === `/profile/${userId}`)
+                                  ? "text-maroon/80"
+                                  : "text-slate-600"
+                                } `}
+                                >
                                 {subMenuItem.label}
                               </Link>
                             </li>
                           ))}
                         </ul>
                       </div>
+                          </div>
                     )}
                   </div>
                 ) : (

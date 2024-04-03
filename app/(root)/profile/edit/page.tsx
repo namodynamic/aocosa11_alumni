@@ -29,7 +29,7 @@ const page = async () => {
         Make changes to your profile
       </p>
 
-      <section className="mt-10 p-10 glassmorphism">
+      <section className="mt-10 p-10 shadow-xl">
         <AccountProfile user={alumnusData} btnTitle="Continue" />
       </section>
     </main>

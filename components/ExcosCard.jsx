@@ -1,15 +1,19 @@
-import Image from "next/image"
+import Image from "next/image";
 
-const ExcosCard = ({name,office,image}) => {
+const ExcosCard = ({ name, office, image }) => {
   return (
-    <div className="exco_card">
-      <Image src={image} alt="exco" className="w-[280px] h-[280px] rounded-xl mx-auto" />
-      <div className="mt-5 text-center flex flex-col">
-        <p className="text-2xl leading-normal text-slate-500 font-inter">{ name}</p>
-      <h3 className="text-xl leading-normal font-bold">{office}</h3>
+    <div className="rounded-xl bg-white border-b-2 border-black shadow-md overflow-hidden">
+      <Image
+        src={image}
+        alt="exco"
+        className="w-full h-[360px] object-fit object-center hover:opacity-80"
+      />
+      <div className="text-center flex flex-col">
+        <p className="mt-4 text-sm font-medium text-gray-700">{name}</p>
+        <h3 className="mt-1 text-lg font-medium text-gray-900">{office}</h3>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ExcosCard
+export default ExcosCard;

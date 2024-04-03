@@ -1,8 +1,7 @@
 import ProfileHeader from "@/components/ProfileHeader";
 import { fetchAlumnus } from "@/lib/actions/alumnus.actions";
-import { currentUser } from '@clerk/nextjs';
+import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
-
 
 const Page = async ({ params }: { params: { id: string } }) => {
   try {
@@ -11,22 +10,20 @@ const Page = async ({ params }: { params: { id: string } }) => {
 
     const userInfo = await fetchAlumnus(params.id);
 
-    if (!userInfo?.onboarded) redirect("/onboarding");
+    // if (!userInfo?.onboarded) redirect("/onboarding");
     return (
-      <section className="w-full bg-black/80">
-        <div className="">
-          <ProfileHeader
-            accountId={userInfo.id}
-            authUserId={user.id}
-            name={userInfo.name}
-            username={userInfo.username}
-            imgUrl={userInfo.image}
-            bio={userInfo.bio}
-            location={userInfo.location}
-            occupation={userInfo.occupation}
-            birthday={userInfo.birthday}
-          />
-        </div>
+      <section className="w-full">
+        <ProfileHeader
+          accountId={userInfo.id}
+          authUserId={user.id}
+          name={userInfo.name}
+          username={userInfo.username}
+          imgUrl={userInfo.image}
+          bio={userInfo.bio}
+          location={userInfo.location}
+          occupation={userInfo.occupation}
+          birthday={userInfo.birthday}
+        />
       </section>
     );
   } catch (error) {

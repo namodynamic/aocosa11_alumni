@@ -66,18 +66,14 @@
 }
 
 .black_btn {
-  @apply rounded-full bg-black px-4 text-white transition-all hover:bg-white hover:text-black text-center text-lg flex items-center justify-center;
+  @apply rounded-full bg-black px-4 text-white transition-all hover:bg-white border border-black hover:text-black text-center text-lg flex items-center justify-center;
 }
 
 .outline_btn {
   @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center;
 }
 .onboarding_btn {
-  @apply rounded-full border border-yellow-400 bg-black px-4 text-white transition-all hover:bg-white hover:text-black text-center text-lg flex items-center justify-center !important;
-}
-
-.outline_btn {
-  @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-full border border-black bg-black px-4 text-white transition-all hover:bg-white hover:text-black text-center text-lg flex items-center justify-center !important;
 }
 
 .head_text {
@@ -113,8 +109,9 @@
 .alumnus_card {
   @apply p-4 bg-white border rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 items-center text-center;
 }
-.exco_card {
-  @apply flex flex-1 flex-col gap-10 relative rounded-xl w-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105;
+
+.social-link {
+  @apply inline-flex h-8 items-center justify-center rounded-md border  border-gray-200 bg-white px-4 text-sm font-medium shadow-sm gap-1 transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950;
 }
 
 /* Form Component */
@@ -172,5 +169,5 @@
 }
 
 .hero-carousel {
-  @apply relative sm:px-10 py-10 sm:pt-5 justify-center  items-center flex pb-5 max-w-[560px] h-[700px] w-full max-sm:h-[500px] bg-transparent  rounded-[30px] sm:mx-auto;
+  @apply relative sm:px-10 py-10 sm:pt-5 justify-center  items-center flex pb-5 max-w-[580px] h-[700px] w-full max-sm:h-[450px] bg-transparent  rounded-[30px] sm:mx-auto;
 }
