@@ -2,13 +2,9 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { edit } from "@/public/assets";
 import { Button } from "./ui/button";
-import Link from "next/link";
-import { FaLinkedin, FaFacebook  } from "react-icons/fa";
+import { FaLinkedin, FaFacebook, FaEdit } from "react-icons/fa";
 import { FaXTwitter, FaInstagram } from "react-icons/fa6";
-
-
 
 interface Props {
   accountId: string;
@@ -20,6 +16,10 @@ interface Props {
   location: string;
   occupation: string;
   birthday: Date;
+  linkedin?: string;
+  twitter?: string;
+  facebook?: string;
+  instagram?: string;
   type?: "User" | "Community";
 }
 
@@ -33,12 +33,22 @@ const ProfileHeader = ({
   location,
   occupation,
   birthday,
-  type,
+  linkedin,
+  twitter,
+  facebook,
+  instagram,
 }: Props) => {
   const router = useRouter();
   const handleEditClick = () => {
     router.push("/profile/edit");
   };
+
+  const socialMediaLinks = [
+    { icon: FaLinkedin, label: "LinkedIn", url: linkedin || "#" },
+    { icon: FaFacebook, label: "Facebook", url: facebook || "#" },
+    { icon: FaInstagram, label: "Instagram", url: instagram || "#" },
+    { icon: FaXTwitter, label: "Twitter", url: twitter || "#" },
+  ];
 
   const formattedBirthday = birthday
     ? new Intl.DateTimeFormat("en-US", {
@@ -69,17 +79,12 @@ const ProfileHeader = ({
             onClick={handleEditClick}
             className={`${
               accountId === authUserId
-                ? "justify-end items-center mt-4 mb-4 space-x-1 border text-black"
+                ? "justify-end items-center mt-4 mb-4 space-x-1"
                 : "hidden"
             }`}
+            variant="secondary"
           >
-            <Image
-              src={edit}
-              alt="edit icon"
-              width={18}
-              height={18}
-              className="object-contain mr-2 transform hover:scale-105 cursor-pointer"
-            />
+            <FaEdit className="mr-1 " />
             Edit Profile
           </Button>
         </div>
@@ -115,22 +120,19 @@ const ProfileHeader = ({
           </div>
 
           <div className="flex flex-col gap-1 min-[400px]:flex-row">
-            <Link className="social-link " href="#">
-              <FaLinkedin />
-              LinkedIn
-            </Link>
-            <Link className="social-link" href="#">
-              <FaFacebook />
-              Facebook
-            </Link>
-            <Link className="social-link" href="#">
-              <FaXTwitter />
-              Twitter
-            </Link>
-            <Link className="social-link" href="#">
-              <FaInstagram />
-              Instagram
-            </Link>
+            {socialMediaLinks.map((link) => (
+              <a
+                key={link.label}
+                rel="noreferrer"
+                target="_blank"
+                className="social-link"
+                href={link.url}
+                aria-label={link.label}
+              >
+                <link.icon />
+                {link.label}
+              </a>
+            ))}
           </div>
         </div>
       </div>

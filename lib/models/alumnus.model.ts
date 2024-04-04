@@ -9,6 +9,10 @@ const alumnusSchema = new mongoose.Schema({
   occupation: String,
   birthday: { type: Date },
   location: String,
+  linkedin: String,
+  twitter: String,
+  facebook: String,
+  instagram: String,
   posts: [
     {
       type: mongoose.Schema.Types.ObjectId,

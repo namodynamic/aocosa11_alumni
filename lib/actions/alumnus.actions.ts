@@ -25,6 +25,10 @@ interface Params {
   birthday: Date;
   location: string;
   occupation: string;
+  linkedin: string;
+  twitter: string;
+  facebook: string;
+  instagram: string;
 }
 
 export async function updateAlumnus({
@@ -37,6 +41,10 @@ export async function updateAlumnus({
   birthday,
   location,
   occupation,
+  linkedin,
+  twitter,
+  facebook,
+  instagram,
 }: Params): Promise<void> {
   try {
     await connectToDB();
@@ -48,6 +56,10 @@ export async function updateAlumnus({
       bio,
       image,
       birthday,
+      linkedin,
+      twitter,
+      facebook,
+      instagram,
       onboarded: true,
     };
 

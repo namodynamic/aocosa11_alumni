@@ -33,6 +33,10 @@ interface Props {
     occupation: string;
     location: string;
     birthday: Date;
+    linkedin?: string;
+    twitter?: string;
+    facebook?: string;
+    instagram?: string;
   };
   btnTitle: string;
 }
@@ -54,6 +58,10 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
       location: user?.location || "",
       birthday: user?.birthday || null,
       bio: user?.bio || "",
+      linkedin: user?.linkedin || "",
+      twitter: user?.twitter || "",
+      facebook: user?.facebook || "",
+      instagram: user?.instagram || "",
     },
   });
 
@@ -83,7 +91,6 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
   };
 
   const onSubmit = async (values: z.infer<typeof UserValidation>) => {
-
     const blob = values.profile_photo;
 
     const birthdayDate = values.birthday ? new Date(values.birthday) : null;
@@ -107,6 +114,10 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
       location: values.location,
       occupation: values.occupation,
       birthday: birthdayDate,
+      linkedin: values.linkedin,
+      twitter: values.twitter,
+      facebook: values.facebook,
+      instagram: values.instagram,
       path: pathname,
     });
 
@@ -245,6 +256,88 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
             </FormItem>
           )}
         />
+
+        <FormField
+          control={form.control}
+          name="linkedin"
+          render={({ field }) => (
+            <FormItem className="flex flex-col w-full gap-3">
+              <FormLabel className="text-base-semibold text-light-2">
+                LinkedIn URL
+              </FormLabel>
+              <FormControl>
+                <Input
+                  type="text"
+                  className="form_input no-focus"
+                  placeholder="e.g https://www.linkedin.com/in/YOUR_USERNAME"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="twitter"
+          render={({ field }) => (
+            <FormItem className="flex flex-col w-full gap-3">
+              <FormLabel className="text-base-semibold text-light-2">
+                Twitter URL
+              </FormLabel>
+              <FormControl>
+                <Input
+                  type="text"
+                  className="form_input no-focus"
+                  placeholder="e.g https://www.twitter.com/YOUR_USERNAME"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="facebook"
+          render={({ field }) => (
+            <FormItem className="flex flex-col w-full gap-3">
+              <FormLabel className="text-base-semibold text-light-2">
+                Facebook URL
+              </FormLabel>
+              <FormControl>
+                <Input
+                  type="text"
+                  className="form_input no-focus"
+                  placeholder="e.g https://www.facebook.com/YOUR_USERNAME"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="instagram"
+          render={({ field }) => (
+            <FormItem className="flex flex-col w-full gap-3">
+              <FormLabel className="text-base-semibold text-light-2">
+                Instagram URL
+              </FormLabel>
+              <FormControl>
+                <Input
+                  type="text"
+                  className="form_input no-focus"
+                  placeholder="e.g https://www.instagram.com/YOUR_USERNAME"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
         <FormField
           control={form.control}
           name="bio"

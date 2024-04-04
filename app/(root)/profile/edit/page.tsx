@@ -20,6 +20,10 @@ const page = async () => {
     location: alumnusInfo ? alumnusInfo?.location : "",
     birthday: alumnusInfo ? alumnusInfo?.birthday : "",
     image: alumnusInfo ? alumnusInfo?.image : user?.imageUrl,
+    linkedin: alumnusInfo ? alumnusInfo?.linkedin : "",
+    twitter: alumnusInfo ? alumnusInfo?.twitter : "",
+    facebook: alumnusInfo ? alumnusInfo?.facebook : "",
+    instagram: alumnusInfo ? alumnusInfo?.instagram : "",
   };
 
   return (

@@ -23,6 +23,10 @@ const Page = async ({ params }: { params: { id: string } }) => {
           location={userInfo.location}
           occupation={userInfo.occupation}
           birthday={userInfo.birthday}
+          linkedin={userInfo?.linkedin}
+          twitter={userInfo?.twitter}
+          facebook={userInfo?.facebook}
+          instagram={userInfo?.instagram}
         />
       </section>
     );

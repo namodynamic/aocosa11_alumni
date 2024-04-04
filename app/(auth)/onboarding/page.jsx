@@ -19,20 +19,24 @@ const page = async () => {
     occupation: alumnusInfo ? alumnusInfo?.occupation : "",
     location: alumnusInfo ? alumnusInfo?.location : "",
     birthday: alumnusInfo ? alumnusInfo?.birthday : "",
+    linkedin: alumnusInfo ? alumnusInfo?.linkedin : "",
+    twitter: alumnusInfo ? alumnusInfo?.twitter : "",
+    facebook: alumnusInfo ? alumnusInfo?.facebook : "",
+    instagram: alumnusInfo ? alumnusInfo?.instagram : "",
     image: alumnusInfo ? alumnusInfo?.image : user?.imageUrl,
   };
 
   return (
-    <main className="mx-auto flex justify-start py-20 px-10 max-w-3xl flex-col">
-      <h1 className="text-lg"> Onboarding</h1>
+    <section className="wrapper sm:mt-20 flex justify-start  flex-col">
+      <h1 className="text-3xl"> Onboarding</h1>
       <p className="mt-3 text-base maroon_gradient">
         Complete your profile now to be fully registered
       </p>
 
-      <section className="mt-10 p-10 glassmorphism">
+      <div className="mt-10 mb-10">
         <AccountProfile user={alumnusData} btnTitle="Continue" />
-      </section>
-    </main>
+      </div>
+    </section>
   );
 };
 
