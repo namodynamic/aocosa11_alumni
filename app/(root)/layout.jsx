@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
         <ClerkProvider>
           <div className="flex bg-slate-50 flex-col min-h-screen">
             <Header />
-            <main className="flex-1 py-12">{children}</main>
+            <main className="flex-1 pt-12">{children}</main>
             <Footer />
           </div>
         </ClerkProvider>
